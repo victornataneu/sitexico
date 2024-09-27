@@ -649,7 +649,7 @@
     .promocao {
         grid-area: destaques;
         max-width: 100%;
-        height: 6%;
+        height: 10%;
         position: fixed; /* Altere para absoluto para maior controle de posição */
         z-index: 10;
         left: 85%; /* Use porcentagens para que acompanhe o redimensionamento */
@@ -840,7 +840,7 @@
 
 
     .nav ul li a img {
-        width: 1.3rem;
+        width: 1.5rem;
         height: auto;
         
     }
@@ -848,7 +848,7 @@
     .promocao {
         grid-area: destaques;
         max-width: 100%;
-        height: 7%;
+        height: 8%;
         position: fixed; /* Altere para absoluto para maior controle de posição */
         z-index: 3;
         left: 64%; /* Use porcentagens para que acompanhe o redimensionamento */
@@ -1110,7 +1110,7 @@
     .promocao {
         grid-area: destaques;
         max-width: 100%;
-        height: 7%;
+        height: 8%;
         position: fixed; /* Altere para absoluto para maior controle de posição */
         z-index: 3;
         left: 63%; /* Use porcentagens para que acompanhe o redimensionamento */
@@ -1337,7 +1337,7 @@
     .promocao {
         grid-area: destaques;
         max-width: 100%;
-        height: 7%;
+        height: 9%;
         position: fixed; /* Altere para absoluto para maior controle de posição */
         z-index: 3;
         left: 65%; /* Use porcentagens para que acompanhe o redimensionamento */
