@@ -863,7 +863,7 @@
     }
 
     .linkpromocao {
-        font-size: 0.7rem;
+        font-size: 0.5rem;
         text-decoration: none;
         color: yellow;
         display: flex;
@@ -1125,7 +1125,7 @@
     }
 
     .linkpromocao {
-        font-size: 0.9rem;
+        font-size: 0.5rem;
         text-decoration: none;
         color: yellow;
         display: flex;
