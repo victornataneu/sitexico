@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netlify CMS</title>
     <script src="https://unpkg.com/netlify-cms@^2.10.0"></script>
 </head>
 <body>
     <script>
-        CMS.init();
+        // Certifique-se de que o DOM está carregado antes de inicializar o CMS
+        document.addEventListener("DOMContentLoaded", function() {
+            CMS.init();
+        });
     </script>
 </body>
 </html>
