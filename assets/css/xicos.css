@@ -362,6 +362,7 @@
     
     
     
+    
 
 }
 
@@ -382,6 +383,7 @@
     background-color:rgba(0, 0, 0, 0.1);
     border-radius: 46%;
     align-items: center;
+    justify-content: center;
     
 }
 
@@ -845,6 +847,8 @@
     .nav ul li a img {
         width: 1.5rem;
         height: auto;
+        justify-content: center;
+        align-items: center;
 
         
     }
