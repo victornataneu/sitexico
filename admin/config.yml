@@ -1,17 +1,18 @@
 backend:
   name: git-gateway
-  branch: main  # Substitua pelo nome da branch que você está usando, se necessário
+  branch: main # Substitua pelo nome da branch que você está usando, se necessário
 
-media_folder: "assets/img"  # Pasta onde as imagens serão armazenadas
-public_folder: "/assets/img"  # Caminho público para as imagens
+media_folder: "assets/img" # Pasta onde as imagens serão armazenadas
+public_folder: "/assets/img" # Caminho público para as imagens
 
 collections:
-  - name: "produtos"  # Nome da coleção
-    label: "Produtos"  # Label a ser exibida no CMS
-    folder: "produtos"  # Pasta onde os produtos estão armazenados
-    create: true
-    slug: "{{slug}}"  # Usado para gerar URLs amigáveis
-    fields:
+  - name: "produtos" # Nome da coleção
+    label: "Produtos" # Rótulo para exibir no CMS
+    folder: "produtos" # Pasta onde os arquivos serão armazenados
+    create: true # Permitir a criação de novos arquivos
+    slug: "{{slug}}" # Gerar slug com base no nome
+    fields: # Campos da coleção
       - { label: "Nome", name: "nome", widget: "string" }
       - { label: "Descrição", name: "descricao", widget: "text" }
+      - { label: "Preço", name: "preco", widget: "number" }
       - { label: "Imagem", name: "imagem", widget: "image" }
