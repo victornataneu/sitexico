@@ -830,18 +830,22 @@
         width: 100%; /* Garante que os itens internos também se adaptem */
         
         
+        
     }
 
 
     .nav ul li{
-        display: block;
+        display: flex;
         width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
 
     .nav ul li a img {
         width: 1.5rem;
         height: auto;
+
         
     }
 
@@ -1697,3 +1701,159 @@
 
 
 
+
+
+
+
+
+
+/* Estilos gerais da seção */
+.section-camisa {
+    display: grid;
+    grid-template-rows: auto auto 1fr; /* Cabeçalho e conteúdo */
+    grid-template-areas: 
+        'head'
+        'text'
+        'content';
+    padding: 2rem;
+    gap: 1rem;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 1.5);
+}
+
+/* Cabeçalho da seção */
+.head {
+    grid-area: head;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: white;
+}
+
+/* Grade principal dos produtos */
+.main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr)); /* Cada coluna terá, no mínimo, 15rem */
+    gap: 1rem; /* Espaço entre os quadrados */
+    width: 100%;
+    max-width: 1200px; /* Limitar a largura máxima */
+    grid-area: content;
+    justify-content: center;
+    
+    
+}
+
+/* Media Queries para ajustes em telas menores */
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr)); /* Ajusta as colunas para telas médias */
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); /* Ajusta as colunas para telas pequenas */
+        padding: 1rem; /* Reduz o padding da seção em telas pequenas */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .section-camisa {
+        padding: 1rem; /* Reduz o padding geral da seção */
+    }
+
+    .produto img {
+        max-height: 150px; /* Reduz a altura máxima das imagens em telas pequenas */
+    }
+}
+
+.text {
+    grid-area: text;
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid white;
+    height: 6rem;
+    border-radius: 1rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    
+    
+}
+
+/* Estilo dos quadrados dos produtos */
+.produto {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Ajuste de hover para efeito nos quadrados */
+.produto:hover {
+    transform: scale(1.05);
+}
+
+/* Imagem do produto */
+.produto img {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Limitar a altura máxima das imagens */
+    object-fit: cover;
+}
+
+/* Descrição do produto */
+.produto p {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Contêiner das cores disponíveis */
+.cores-disponiveis {
+    display: flex;
+    gap: 0.5rem; /* Espaço entre os círculos de cores */
+    margin-top: 0.5rem;
+}
+
+/* Círculo de cor */
+.cores-disponiveis .cor {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd; /* Borda ao redor do círculo */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Efeito de hover nos círculos */
+.cores-disponiveis .cor:hover {
+    transform: scale(1.1); /* Aumentar o tamanho ao passar o mouse */
+    border-color: #333; /* Mudar a cor da borda */
+}
+
+
+.share-whatsapp {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #25d366; /* Cor do WhatsApp */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.share-whatsapp:hover {
+    background-color: #1ebe52; /* Cor mais escura ao passar o mouse */
+}
