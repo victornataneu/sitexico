@@ -2,15 +2,17 @@
 <html>
 <head>
     <title>Netlify CMS</title>
-    <script src="https://unpkg.com/netlify-cms@2.15.0"></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/netlify/netlify-cms@latest/dist/netlify-cms.js"></script>
 </head>
 <body>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Inicializa o CMS
-            CMS.init();
-        });
+        window.onload = function() {
+            if (CMS) {
+                CMS.init();
+            } else {
+                console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
+            }
+        };
     </script>
 </body>
 </html>
