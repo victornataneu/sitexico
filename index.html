@@ -1,69 +1,75 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Xicos Multimarcas</title>
+    <title>Xicos Multimarcas</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
-    <script src="script.js" defer></script> <!-- O script.js será carregado -->
-    <script>
-        // Função para carregar o conteúdo dinâmico
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch('/folder/index.md') // ou /folder/index.json se usar JSON
-            .then(response => response.text())
-            .then(data => {
-                const content = parseMarkdown(data);
-                document.getElementById('logo').src = content.logo;
-                document.getElementById('slogan').textContent = content.slogan;
-                document.getElementById('whatsapp-text').textContent = content.whatsapp;
-                document.getElementById('delivery-rules').textContent = content.delivery_rules;
-                document.getElementById('payment-options').textContent = content.payment_options;
-
-                // Carregar produtos dinamicamente
-                const productsDiv = document.getElementById('products');
-                content.products.forEach(product => {
-                    let imgElement = document.createElement('img');
-                    imgElement.src = product.image;
-                    imgElement.alt = product.name;
-                    productsDiv.appendChild(imgElement);
-                });
-            });
-        });
-
-        // Função básica de parsing de Markdown (você pode melhorar isso com uma biblioteca Markdown)
-        function parseMarkdown(mdText) {
-            // Simples conversão de chaves para JSON se precisar
-            const result = {};
-            mdText.split("\n").forEach(line => {
-                if (line.startsWith('---')) return;
-                const [key, value] = line.split(': ');
-                result[key.trim()] = value ? value.trim().replace(/"/g, '') : "";
-            });
-            return result;
-        }
-    </script>
+    
 </head>
 <body>
     <section class="section-main">
         <header class="logo">
-            <img id="logo" class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
+            <img class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
             <div class="main-img">
-                <h1 id="slogan"></h1>
-                <h1 id="whatsapp-text"></h1>
+                <h1>
+                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> Enviamos para todo o Brasil!
+                </h1>
+                <h1>
+                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> Faça sua encomenda!
+                </h1>
+            </div>
+            <div class="promocao">
+                <a href="#" target="_blank"><img src="/assets/img/icons8-promotion.gif" alt="botao de promoção"></a>
+                <a class="linkpromocao" href="#" target="_blank">Promoções</a>
             </div>
         </header>
         
-        <!-- Regras de entrega -->
-        <h2>Regras de Entregas</h2>
-        <div id="delivery-rules"></div>
+        <nav class="nav">
+            <ul>
+                <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Icone camisa"></a></li>
+                <li><a href="#"><img src="/assets/img/bermudaicon.png" alt="Icone bermuda"></a></li>
+                <li><a href="#"><img src="/assets/img/calcaicon.png" alt="Icone calça"></a></li>
+                <li><a href="#"><img src="/assets/img/boneicon.png" alt="Icone boné"></a></li>
+                <li><a href="#"><img src="/assets/img/sapatoicon (2).png" alt="Icone sapato"></a></li>
+                <li><a href="#"><img src="/assets/img/cuecaicon.png" alt="Icone cueca"></a></li>
+                <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Icone joias"></a></li>
+            </ul>
+        </nav>
+        <div class="content-destaques">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 1" >
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 2">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 3">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 4">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 4">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <h2>Faça sua encomenda conosco</h2>
+            <p>
+                Não achou o que procurava? Não se preocupe! Fale conosco que vamos atrás do que precisa.<br>
+                Precisa de algum produto que não tem em nosso catálogo? Fale com a gente! <a href="https://wa.me/5562994953404" target="_blank"><img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).
+                </a>
+            </p>
+            <h2>Regras de Entregas</h2>
+            <p class="entregas">
+                <h3>Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!</h3><br>
 
-        <!-- Formas de pagamento -->
-        <h2>Formas de Pagamento</h2>
-        <div id="payment-options"></div>
-
-        <!-- Produtos -->
-        <h2>Produtos</h2>
-        <div id="products"></div>
+            </p>
+            <h2>Formas de Pagamento</h2>
+            <div class="formapagamento">
+                <img src="/assets/img/visa.png" width="46px" height="46px">
+                <img src="/assets/img/card.png" width="46px" height="46px">
+                <p>Dividimos em até 6x nos cartões</p>
+                <img class="pix" src="/assets/img/icons8-pix-48.png" width="46px" height="46px">
+                <p>No Pix Desconto de até 10%</p>
+            </div>
+            
+        </div>
     </section>
     <footer class="rodape">
         <h1>Fale Conosco</h1>
@@ -71,15 +77,18 @@
             <a href="https://www.instagram.com/xico__multimarcas" target="_blank">
                 <img src="/assets/img/icons8-instagram.svg" alt="Instagram">
             </a>
-            <a href="https://wa.me/5562994953404" target="_blank">
+            <a href="hhttps://wa.me/5562994953404" target="_blank">
                 <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">
             </a>
             <p>
-                <a href="https://www.google.com/maps" target="_blank">
+                <a href="https://www.google.com.br/maps/place/Xico+Multimarcas/@-15.7540268,-58.550024,6z/data=!4m10!1m2!2m1!1sxico+multimarcas!3m6!1s0x935c559301c2d2b7:0x317a565c0fdb8b52!8m2!3d-15.7540268!4d-49.3215084!15sChB4aWNvIG11bHRpbWFyY2FzWhIiEHhpY28gbXVsdGltYXJjYXOSAQ5jbG90aGluZ19zdG9yZeABAA!16s%2Fg%2F11q9qytm0_?entry=ttu&g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
                     <img src="/assets/img/addresswhite.png" alt="Endereço">
                 </a>
                 <span class="ende">R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000</span>
+               
             </p>
+            
+            
         </div>
     </footer>
 </body>
