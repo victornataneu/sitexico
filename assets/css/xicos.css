@@ -379,7 +379,7 @@
 .nav ul li{
   display: flex;
   list-style-type: none;
-  background-color:rgba(0, 0, 0, 0.1);
+  background-color: white;
   border-radius: 46%;
   align-items: center;
   
