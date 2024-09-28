@@ -20,3 +20,4 @@ social_media:
   whatsapp: "https://wa.me/5562994953404"
   address: "R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000"
   google_maps: "https://www.google.com.br/maps/place/Xico+Multimarcas/"
+ 
