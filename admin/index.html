@@ -4,11 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin - Xicos Multimarcas</title>
-  <script src="https://unpkg.com/netlify-cms@2.9.0/dist/netlify-cms.js"></script>
+  <script src="https://unpkg.com/netlify-cms@2.9.0/dist/netlify-cms.js" defer></script>
 </head>
 <body>
   <script>
-    // Adicione aqui scripts específicos do Netlify CMS, se necessário.
+    // Inicializa o Netlify CMS
+    if (typeof NetlifyCMS !== 'undefined') {
+      NetlifyCMS.init();
+    }
   </script>
 </body>
 </html>
