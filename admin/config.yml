@@ -1,16 +1,23 @@
 backend:
   name: git-gateway
-  branch: main  # Verifique se o seu branch principal é realmente "main". Caso contrário, altere para "master" ou o nome correto.
+  branch: main  # Certifique-se de que este é o branch correto
 
-media_folder: "assets/uploads"  # O diretório "assets" já existe, então mantenha este caminho.
-public_folder: "/assets/uploads"  # O caminho público para acessar as mídias.
+media_folder: "assets/uploads"  # Diretório para uploads de mídia
+public_folder: "/assets/uploads"  # Diretório público para acesso às mídias
 
 collections:
   - name: "conteudo"
     label: "Conteúdo do Site"
-    folder: "folder"  # Agora você vai utilizar a pasta "folder" para salvar os arquivos de conteúdo.
-    create: true
+    folder: "folder"  # Diretório onde os arquivos de conteúdo são armazenados
+    create: true  # Permite a criação de novos arquivos
     fields:
       - { label: "Título", name: "titulo", widget: "string" }
       - { label: "Conteúdo", name: "conteudo", widget: "markdown" }
       - { label: "Imagem", name: "imagem", widget: "image" }
+
+  - name: "html"
+    label: "Páginas HTML"
+    folder: "."  # A pasta raiz do repositório
+    create: false  # Não queremos criar novos arquivos HTML
+    fields:
+      - { label: "Arquivo", name: "file", widget: "file", required: true, format: "html" }
