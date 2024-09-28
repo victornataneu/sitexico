@@ -1,33 +1,17 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main  # Substitua pelo nome da branch que você está usando, se necessário
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "assets/img"  # Pasta onde as imagens serão armazenadas
+public_folder: "/assets/img"  # Caminho público para as imagens
 
 collections:
-  - name: "conteudo"
-    label: "Conteúdo do Site"
-    folder: "folder"
+  - name: "produtos"  # Nome da coleção
+    label: "Produtos"  # Label a ser exibida no CMS
+    folder: "produtos"  # Pasta onde os produtos estão armazenados
     create: true
+    slug: "{{slug}}"  # Usado para gerar URLs amigáveis
     fields:
-      - { label: "Título", name: "titulo", widget: "string" }
-      - { label: "Conteúdo", name: "conteudo", widget: "markdown" }
+      - { label: "Nome", name: "nome", widget: "string" }
+      - { label: "Descrição", name: "descricao", widget: "text" }
       - { label: "Imagem", name: "imagem", widget: "image" }
-
-  - name: "html"
-    label: "Páginas HTML"
-    folder: "." 
-    create: false 
-    fields:
-      - { label: "Arquivo", name: "file", widget: "file", required: true, format: "html" }
-
-  - name: "principal"
-    label: "Página Principal"
-    folder: "folder"  
-    create: false
-    fields:
-      - { label: "Título Principal", name: "titulo_principal", widget: "string" }
-      - { label: "Texto Principal", name: "texto_principal", widget: "text" }
-      - { label: "Imagem de Destaque", name: "imagem_destaque", widget: "image" }
-      - { label: "Carrossel de Imagens", name: "carrossel", widget: "list", fields: [{label: "Imagem", name: "imagem", widget: "image"}] }
