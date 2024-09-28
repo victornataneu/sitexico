@@ -3,91 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xicos Multimarcas</title>
+    <title>{{ site.title }}</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
-    
 </head>
 <body>
     <section class="section-main">
         <header class="logo">
-            <img class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
+            <img class="imglogo-01" src="{{ site.logo }}" alt="Logo da empresa">
             <div class="main-img">
                 <h1>
-                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> Enviamos para todo o Brasil!
+                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> {{ site.slogan_1 }}
                 </h1>
                 <h1>
-                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> Faça sua encomenda!
+                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> {{ site.slogan_2 }}
                 </h1>
             </div>
             <div class="promocao">
-                <a href="#" target="_blank"><img src="/assets/img/icons8-promotion.gif" alt="botao de promoção"></a>
-                <a class="linkpromocao" href="#" target="_blank">Promoções</a>
+                <a href="{{ site.promocao_link }}" target="_blank"><img src="{{ site.promocao_img }}" alt="botao de promoção"></a>
+                <a class="linkpromocao" href="{{ site.promocao_link }}" target="_blank">Promoções</a>
             </div>
         </header>
         
         <nav class="nav">
             <ul>
-                <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Icone camisa"></a></li>
-                <li><a href="#"><img src="/assets/img/bermudaicon.png" alt="Icone bermuda"></a></li>
-                <li><a href="#"><img src="/assets/img/calcaicon.png" alt="Icone calça"></a></li>
-                <li><a href="#"><img src="/assets/img/boneicon.png" alt="Icone boné"></a></li>
-                <li><a href="#"><img src="/assets/img/sapatoicon (2).png" alt="Icone sapato"></a></li>
-                <li><a href="#"><img src="/assets/img/cuecaicon.png" alt="Icone cueca"></a></li>
-                <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Icone joias"></a></li>
+                {% for item in site.menu %}
+                <li><a href="{{ item.link }}"><img src="{{ item.icon }}" alt="{{ item.nome }}"></a></li>
+                {% endfor %}
             </ul>
         </nav>
         <div class="content-destaques">
             <div class="carousel">
                 <div class="carousel-track">
-                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 1" >
-                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 2">
-                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 3">
-                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 4">
-                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 4">
+                    {% for imagem in conteudo.carrossel %}
+                    <img src="{{ imagem }}" alt="Produto">
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div class="main">
-            <h2>Faça sua encomenda conosco</h2>
+            <h2>{{ conteudo.titulo_principal }}</h2>
             <p>
-                Não achou o que procurava? Não se preocupe! Fale conosco que vamos atrás do que precisa.<br>
-                Precisa de algum produto que não tem em nosso catálogo? Fale com a gente! <a href="https://wa.me/5562994953404" target="_blank"><img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).
-                </a>
+                {{ conteudo.texto_principal }}
+                <a href="https://wa.me/5562994953404" target="_blank"><img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).</a>
             </p>
-            <h2>Regras de Entregas</h2>
-            <p class="entregas">
-                <h3>Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!</h3><br>
-
-            </p>
-            <h2>Formas de Pagamento</h2>
-            <div class="formapagamento">
-                <img src="/assets/img/visa.png" width="46px" height="46px">
-                <img src="/assets/img/card.png" width="46px" height="46px">
-                <p>Dividimos em até 6x nos cartões</p>
-                <img class="pix" src="/assets/img/icons8-pix-48.png" width="46px" height="46px">
-                <p>No Pix Desconto de até 10%</p>
-            </div>
-            
         </div>
     </section>
     <footer class="rodape">
-        <h1>Fale Conosco</h1>
+        <h1>{{ site.footer_title }}</h1>
         <div class="redes-sociais-e-contatos">
-            <a href="https://www.instagram.com/xico__multimarcas" target="_blank">
+            <a href="{{ site.instagram }}" target="_blank">
                 <img src="/assets/img/icons8-instagram.svg" alt="Instagram">
             </a>
-            <a href="hhttps://wa.me/5562994953404" target="_blank">
+            <a href="{{ site.whatsapp }}" target="_blank">
                 <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">
             </a>
             <p>
-                <a href="https://www.google.com.br/maps/place/Xico+Multimarcas/@-15.7540268,-58.550024,6z/data=!4m10!1m2!2m1!1sxico+multimarcas!3m6!1s0x935c559301c2d2b7:0x317a565c0fdb8b52!8m2!3d-15.7540268!4d-49.3215084!15sChB4aWNvIG11bHRpbWFyY2FzWhIiEHhpY28gbXVsdGltYXJjYXOSAQ5jbG90aGluZ19zdG9yZeABAA!16s%2Fg%2F11q9qytm0_?entry=ttu&g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                <a href="{{ site.google_maps }}" target="_blank">
                     <img src="/assets/img/addresswhite.png" alt="Endereço">
                 </a>
-                <span class="ende">R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000</span>
-               
+                <span class="ende">{{ site.endereco }}</span>
             </p>
-            
-            
         </div>
     </footer>
 </body>
