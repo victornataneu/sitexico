@@ -28,7 +28,7 @@
         <div class="edit-link">
             <a href="/admin/index.html">Editar Conteúdo</a>
         </div>
-        
+
         <nav class="nav">
             <ul>
                 <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Ícone camisa"></a></li>
@@ -40,7 +40,7 @@
                 <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Ícone joias"></a></li>
             </ul>
         </nav>
-        
+
         <!-- Resto do conteúdo -->
         <div class="content-destaques">
             <div class="carousel">
@@ -90,5 +90,22 @@
             </p>
         </div>
     </footer>
+
+    <!-- Adicione aqui o elemento onde o Netlify CMS será anexado -->
+    <div id="cms"></div>
+
+    <!-- Inclua o script do Netlify CMS no final do body -->
+    <script src="https://unpkg.com/netlify-cms@latest"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (CMS) {
+                CMS.init({
+                    target: "#cms" // Alvo para o CMS se anexar
+                });
+            } else {
+                console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
+            }
+        });
+    </script>
 </body>
 </html>
