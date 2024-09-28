@@ -789,7 +789,7 @@ align-items: center;
     justify-content: center;
     align-items: center;
     font-size: 0.6rem;
-    animation: moveImagesss 10s infinite ease-in-out;
+    animation: moveImagesss 20s infinite ease-in-out;
 }
 
 @keyframes moveImagesss {
@@ -847,6 +847,9 @@ align-items: center;
 .nav ul li a img {
     width: 1.5rem;
     height: auto;
+    display: flex;
+    position: relative;
+    left: 12%;
     
 
     
