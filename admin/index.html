@@ -2,13 +2,17 @@
 <html>
 <head>
     <title>Netlify CMS</title>
-    <script src="https://unpkg.com/netlify-cms@latest"></script> <!-- Ou use a versão específica que você deseja -->
+    <script src="https://unpkg.com/netlify-cms@latest"></script> <!-- Carregando a biblioteca do Netlify CMS -->
 </head>
 <body>
     <script>
         // Certifique-se de que o DOM está carregado antes de inicializar o CMS
         document.addEventListener("DOMContentLoaded", function() {
-            CMS.init();
+            if (CMS) { // Verifica se a variável CMS está definida
+                CMS.init();
+            } else {
+                console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
+            }
         });
     </script>
 </body>
