@@ -3,67 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }}</title>
+    <title id="page-title">Xicos Multimarcas</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
+    <script>
+        // Função para carregar o conteúdo dinâmico
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/folder/index.md') // ou /folder/index.json se usar JSON
+            .then(response => response.text())
+            .then(data => {
+                const content = parseMarkdown(data);
+                document.getElementById('logo').src = content.logo;
+                document.getElementById('slogan').textContent = content.slogan;
+                document.getElementById('whatsapp-text').textContent = content.whatsapp;
+                document.getElementById('delivery-rules').textContent = content.delivery_rules;
+                document.getElementById('payment-options').textContent = content.payment_options;
+
+                // Carregar produtos dinamicamente
+                const productsDiv = document.getElementById('products');
+                content.products.forEach(product => {
+                    let imgElement = document.createElement('img');
+                    imgElement.src = product.image;
+                    imgElement.alt = product.name;
+                    productsDiv.appendChild(imgElement);
+                });
+            });
+        });
+
+        // Função básica de parsing de Markdown (você pode melhorar isso com uma biblioteca Markdown)
+        function parseMarkdown(mdText) {
+            // Simples conversão de chaves para JSON se precisar
+            const result = {};
+            mdText.split("\n").forEach(line => {
+                if (line.startsWith('---')) return;
+                const [key, value] = line.split(': ');
+                result[key.trim()] = value ? value.trim().replace(/"/g, '') : "";
+            });
+            return result;
+        }
+    </script>
 </head>
 <body>
     <section class="section-main">
         <header class="logo">
-            <img class="imglogo-01" src="{{ site.logo }}" alt="Logo da empresa">
+            <img id="logo" class="imglogo-01" src="" alt="Logo da empresa">
             <div class="main-img">
-                <h1>
-                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> {{ site.slogan_1 }}
-                </h1>
-                <h1>
-                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> {{ site.slogan_2 }}
-                </h1>
-            </div>
-            <div class="promocao">
-                <a href="{{ site.promocao_link }}" target="_blank"><img src="{{ site.promocao_img }}" alt="botao de promoção"></a>
-                <a class="linkpromocao" href="{{ site.promocao_link }}" target="_blank">Promoções</a>
+                <h1 id="slogan"></h1>
+                <h1 id="whatsapp-text"></h1>
             </div>
         </header>
         
-        <nav class="nav">
-            <ul>
-                {% for item in site.menu %}
-                <li><a href="{{ item.link }}"><img src="{{ item.icon }}" alt="{{ item.nome }}"></a></li>
-                {% endfor %}
-            </ul>
-        </nav>
-        <div class="content-destaques">
-            <div class="carousel">
-                <div class="carousel-track">
-                    {% for imagem in conteudo.carrossel %}
-                    <img src="{{ imagem }}" alt="Produto">
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-        <div class="main">
-            <h2>{{ conteudo.titulo_principal }}</h2>
-            <p>
-                {{ conteudo.texto_principal }}
-                <a href="https://wa.me/5562994953404" target="_blank"><img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).</a>
-            </p>
-        </div>
+        <!-- Regras de entrega -->
+        <div id="delivery-rules"></div>
+
+        <!-- Formas de pagamento -->
+        <div id="payment-options"></div>
+
+        <!-- Produtos -->
+        <div id="products"></div>
     </section>
-    <footer class="rodape">
-        <h1>{{ site.footer_title }}</h1>
-        <div class="redes-sociais-e-contatos">
-            <a href="{{ site.instagram }}" target="_blank">
-                <img src="/assets/img/icons8-instagram.svg" alt="Instagram">
-            </a>
-            <a href="{{ site.whatsapp }}" target="_blank">
-                <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">
-            </a>
-            <p>
-                <a href="{{ site.google_maps }}" target="_blank">
-                    <img src="/assets/img/addresswhite.png" alt="Endereço">
-                </a>
-                <span class="ende">{{ site.endereco }}</span>
-            </p>
-        </div>
-    </footer>
 </body>
 </html>
