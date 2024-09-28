@@ -1,15 +1,15 @@
 backend:
   name: git-gateway
-  branch: main  # Certifique-se de que este é o branch correto
+  branch: main
 
-media_folder: "assets/uploads"  # Diretório para uploads de mídia
-public_folder: "/assets/uploads"  # Diretório público para acesso às mídias
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
 
 collections:
   - name: "conteudo"
     label: "Conteúdo do Site"
-    folder: "folder"  # Diretório onde os arquivos de conteúdo são armazenados
-    create: true  # Permite a criação de novos arquivos
+    folder: "folder"
+    create: true
     fields:
       - { label: "Título", name: "titulo", widget: "string" }
       - { label: "Conteúdo", name: "conteudo", widget: "markdown" }
@@ -17,7 +17,17 @@ collections:
 
   - name: "html"
     label: "Páginas HTML"
-    folder: "."  # A pasta raiz do repositório
-    create: false  # Não queremos criar novos arquivos HTML
+    folder: "." 
+    create: false 
     fields:
       - { label: "Arquivo", name: "file", widget: "file", required: true, format: "html" }
+
+  - name: "principal"
+    label: "Página Principal"
+    folder: "folder"  # Diretório para a página principal
+    create: false
+    fields:
+      - { label: "Título Principal", name: "titulo_principal", widget: "string" }
+      - { label: "Texto Principal", name: "texto_principal", widget: "text" }
+      - { label: "Imagem de Destaque", name: "imagem_destaque", widget: "image" }
+      - { label: "Carrossel de Imagens", name: "carrossel", widget: "list", fields: [{label: "Imagem", name: "imagem", widget: "image"}] }
