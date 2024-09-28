@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>Netlify CMS</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
     <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.0/dist/netlify-cms.js"></script>
 </head>
 <body>
     <script>
         window.onload = function() {
-            if (window.CMS) {
+            if (CMS) {
                 CMS.init();
             } else {
                 console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
