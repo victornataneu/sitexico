@@ -383,7 +383,6 @@
     background-color:rgba(0, 0, 0, 0.1);
     border-radius: 46%;
     align-items: center;
-    justify-content: center;
     
 }
 
@@ -391,6 +390,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: -5%;
 }
 
 
@@ -849,6 +852,7 @@
         height: auto;
         justify-content: center;
         align-items: center;
+        position: relative;
         right: -5%;
 
         
@@ -2819,6 +2823,11 @@
     .nav ul li a img {
         width: 1.5rem;
         height: auto;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: -5%;
+        
         
     }
   
@@ -3045,6 +3054,10 @@
     .nav ul li a img {
         width: 1.5rem;
         height: auto;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        right: -5%;
         
     }
   
