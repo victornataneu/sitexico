@@ -29,8 +29,7 @@
   align-items: center;
   border-radius: 1rem;
   margin-left: 2rem;
-  animation: moveImage 20s infinite ease-in-out;
-  
+  animation: moveImage 20s both ease-in-out;
 
 }
 
@@ -40,7 +39,6 @@
   margin-left: 1rem;
   margin-top: 0.5rem;
   display: flex;
-
   
 
 }
@@ -71,7 +69,6 @@
 .main-img .img-02{
   height: 4rem;
   margin-right: 1rem;
-  margin: 0;
 
 }
 
@@ -423,14 +420,6 @@
       width: 100%;
   }
 
-  .main-img img {
-      margin: 0;
-  }
-
-  .main-img .img-02 {
-      margin: 0;
-      
-  }
   
   
 }
@@ -472,7 +461,6 @@
       align-items: center;
       font-size: 0.7rem;
       animation: moveImagees 20s infinite ease-in-out;
-      margin: 0;
   }
 
   @keyframes moveImagees {
