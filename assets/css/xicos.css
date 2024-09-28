@@ -1102,7 +1102,10 @@
       margin: 0.5rem;
       width: 100%; /* Garante que os itens internos também se adaptem */
       
-      
+  }
+
+  .nav ul li{
+    background-color: white;
   }
 
 
@@ -1774,7 +1777,7 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 1px solid white;
-  height: 6rem;
+  min-height: 8rem;
   border-radius: 1rem;
   text-align: center;
   justify-content: center;
@@ -1782,6 +1785,7 @@
   background-color: black;
   color: white;
   font-size: 1rem;
+  
   
   
 }
