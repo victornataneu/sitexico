@@ -41,7 +41,6 @@
             </ul>
         </nav>
 
-        <!-- Resto do conteúdo -->
         <div class="content-destaques">
             <div class="carousel">
                 <div class="carousel-track">
@@ -97,8 +96,10 @@
     <!-- Inclua o script do Netlify CMS no final do body -->
     <script src="https://unpkg.com/netlify-cms@latest"></script>
     <script>
+        // Inicializa o Netlify CMS após o carregamento do script
         document.addEventListener("DOMContentLoaded", function() {
-            if (CMS) {
+            // Espera o script do CMS ser carregado
+            if (window.CMS) { // Verifica se o CMS está definido
                 CMS.init({
                     target: "#cms" // Alvo para o CMS se anexar
                 });
