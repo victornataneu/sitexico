@@ -9,7 +9,15 @@
         // Certifique-se de que o DOM está carregado antes de inicializar o CMS
         document.addEventListener("DOMContentLoaded", function() {
             if (CMS) { // Verifica se a variável CMS está definida
-                CMS.init();
+                CMS.init({
+                    // Configurações do CMS podem ser adicionadas aqui
+                    backend: {
+                        name: "git-gateway",
+                        branch: "main" // Substitua pelo nome da branch que você está usando, se necessário
+                    },
+                    media_folder: "assets/img", // Pasta onde as imagens serão armazenadas
+                    public_folder: "/assets/img" // Caminho público para as imagens
+                });
             } else {
                 console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
             }
