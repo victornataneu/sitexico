@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 </head>
 <body>
-    <form id="loginForm">
-        <input type="email" id="email" placeholder="Seu email" required>
-        <input type="password" id="password" placeholder="Sua senha" required>
-        <button type="submit">Entrar</button>
-    </form>
+  <form id="loginForm">
+    <input type="email" id="email" placeholder="Seu email" required>
+    <input type="password" id="password" placeholder="Sua senha" required>
+    <button type="submit">Entrar</button>
+  </form>
 
-    <script>
-        const validUsers = [
-            { email: 'alunoaluno713@gmail.com', password: 'Jotajota123*' }, // Substitua 'suaSenha1' pela senha desejada
-            { email: 'victoreu00@gmail.com', password: 'q1w2e3r4t5y6u7i8o9p0***' } // Substitua 'suaSenha2' pela senha desejada
-        ];
+  <script>
+    const validUsers = [
+      { email: 'usuario1@example.com', password: 'senha1' },
+      { email: 'usuario2@example.com', password: 'senha2' },
+    ];
 
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
 
-            const user = validUsers.find(u => u.email === email && u.password === password);
-            if (user) {
-                alert('Login bem-sucedido!');
-                // Redirecionar para a página do editor
-                window.location.href = 'editor.html'; // Substitua pelo caminho correto do editor
-            } else {
-                alert('Email ou senha inválidos!');
-            }
-        });
-    </script>
+      const user = validUsers.find(u => u.email === email && u.password === password);
+      if (user) {
+        alert('Login bem-sucedido!');
+        // Redirecionar para a página do editor
+        window.location.href = 'editor.html';
+      } else {
+        alert('Email ou senha inválidos!');
+      }
+    });
+  </script>
 </body>
 </html>
