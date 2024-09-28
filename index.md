@@ -13,4 +13,4 @@ Não achou o que procurava? Fale conosco que vamos atrás do que precisa!
 Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100.
 
 ### Formas de Pagamento
-Dividimos em até 6x nos cartões. No Pix, desconto de até 10%.
+Dividimos em até 4x nos cartões. No Pix, desconto de até 10%.
