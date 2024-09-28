@@ -4,30 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Editor de Conteúdo</title>
-  <script src="https://unpkg.com/netlify-cms@2.10.0/dist/netlify-cms.js"></script>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    window.netlifyIdentity = window.netlifyIdentity || {};
-    window.netlifyIdentity.on("init", user => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/"; // Redirecionar para a página de administração após o login
-        });
-      } else {
-        // Caso já esteja logado, redirecione para a página do editor ou mostre uma mensagem
-        console.log("Usuário já está logado:", user);
-      }
-    });
-  </script>
+  <!-- Carrega o Netlify CMS -->
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </head>
 <body>
-  <h1>Bem-vindo ao Editor de Conteúdo</h1>
-  <button id="login-button">Login</button>
+  <!-- Carrega o Netlify Identity Widget -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    // Ação do botão de login
-    document.getElementById("login-button").onclick = function() {
-      window.netlifyIdentity.open();
-    };
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
   </script>
 </body>
 </html>
