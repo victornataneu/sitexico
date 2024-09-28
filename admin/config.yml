@@ -17,15 +17,14 @@ collections:
 
   - name: "html"
     label: "Páginas HTML"
-    folder: "."
-    create: false
+    folder: "." 
+    create: false 
     fields:
-      - { label: "Título", name: "titulo", widget: "string", required: true }  # Campo título adicionado
       - { label: "Arquivo", name: "file", widget: "file", required: true, format: "html" }
 
   - name: "principal"
     label: "Página Principal"
-    folder: "folder"  # Diretório para a página principal
+    folder: "folder"  
     create: false
     fields:
       - { label: "Título Principal", name: "titulo_principal", widget: "string" }
