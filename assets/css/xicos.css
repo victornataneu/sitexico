@@ -460,7 +460,7 @@
       justify-content: center;
       align-items: center;
       font-size: 0.7rem;
-      animation: moveImagees 10s infinite ease-in-out;
+      animation: moveImagees 20s infinite ease-in-out;
   }
 
   @keyframes moveImagees {
@@ -592,7 +592,7 @@
       justify-content: center;
       align-items: center;
       font-size: 0.7rem;
-      animation: moveImagess 10s infinite ease-in-out;
+      animation: moveImagess 20s infinite ease-in-out;
   }
 
 
@@ -1064,7 +1064,7 @@
       justify-content: center;
       align-items: center;
       font-size: 0.6rem;
-      animation: moveImagess 10s infinite ease-in-out;
+      animation: moveImagess 20s infinite ease-in-out;
   }
 
   @keyframes moveImagess {
@@ -1286,7 +1286,7 @@
       justify-content: center;
       align-items: center;
       font-size: 0.6rem;
-      animation: moveImagesss 10s infinite ease-in-out;
+      animation: moveImagesss 20s infinite ease-in-out;
   }
 
   @keyframes moveImagesss {
@@ -1513,7 +1513,7 @@
       justify-content: center;
       align-items: center;
       font-size: 0.6rem;
-      animation: moveImagesss 10s infinite ease-in-out;
+      animation: moveImagesss 20s infinite ease-in-out;
   }
 
   @keyframes moveImagesss {
