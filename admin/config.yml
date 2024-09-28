@@ -1,0 +1,16 @@
+backend:
+  name: git-gateway
+  branch: main  # O branch principal do seu repositório
+
+media_folder: "assets/uploads" # Diretório para salvar arquivos e imagens
+public_folder: "/assets/uploads" # Caminho público para acessar os arquivos
+
+collections:
+  - name: "conteudo"
+    label: "Conteúdo do Site"
+    folder: "conteudo"
+    create: true
+    fields:
+      - { label: "Título", name: "titulo", widget: "string" }
+      - { label: "Conteúdo", name: "conteudo", widget: "markdown" }
+      - { label: "Imagem", name: "imagem", widget: "image" }
