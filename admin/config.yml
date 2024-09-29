@@ -1,16 +1,24 @@
 backend:
-  name: git-gateway
-  branch: main # substitua pelo nome da branch que você está usando
+  name: github
+  repo: seu-usuario/seu-repositorio # substitua com seu repositório
+  branch: main # ou o branch que você estiver usando
 
-media_folder: "assets/uploads" # pasta para uploads de imagens
-public_folder: "/assets/uploads" # caminho público para a pasta de uploads
+media_folder: "assets/img" # Onde as imagens serão armazenadas
+public_folder: "/assets/img" # Caminho público para as imagens
 
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "content/posts"
+    folder: "posts" # pasta onde seus posts são armazenados
     create: true
-    slug: "{{slug}}"
+    delete: true
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Conteúdo", name: "body", widget: "markdown" }
+      - { label: "Imagem", name: "image", widget: "image" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Publicar", name: "published", widget: "boolean", default: true }
+
+# Opções de configuração adicional
+site_url: "https://catalogoxicomultimarcas.netlify.app" # Substitua pelo URL do seu site
+display_url: "https://catalogoxicomultimarcas.netlify.app/#/" # URL que será exibido no CMS
