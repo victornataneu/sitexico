@@ -6,9 +6,11 @@
   "mensagem_encomenda": "Não achou o que procurava? Não se preocupe! Fale conosco que vamos atrás do que precisa. Precisa de algum produto que não tem em nosso catálogo? Fale com a gente!",
   "whatsapp_link": "https://wa.me/5562994953404",
   "regras_entrega": "Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!",
-  "formas_pagamento": "Dividimos em até 6x nos cartões. No Pix Desconto de até 10%",
+  "formas_pagamento": {
+    "descricao": "Dividimos em até 6x nos cartões",
+    "desconto_pix": "No Pix Desconto de até 10%"
+  },
   "endereco": "R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000",
-  
   "logo_url": "/assets/img/logoxico.jpeg",
   "carousel_images": [
     "/assets/img/jaragua-go.jpg",
