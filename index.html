@@ -20,6 +20,19 @@
             </div>
         </header>
 
+        <nav class="nav">
+    <ul>
+        {% for item in page.nav_items %}
+            <li>
+                <a href="{{ item.link }}" target="_blank">
+                    <img src="{{ item.icon }}" alt="{{ item.alt }}">
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+
         <div class="content-destaques">
     <div class="carousel">
         <div class="carousel-track">
