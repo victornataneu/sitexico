@@ -1,5 +1,5 @@
 ---
-title: Xicos Multimarcas
+title: Xico Multimarcas
 header_title: Enviamos para todo o Brasil!
 header_subtitle: Faça sua encomenda!
 promo_link: https://seupromo.com
