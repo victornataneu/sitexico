@@ -1,5 +1,5 @@
 baseURL = "https://catalogoxicomultimarcas.netlify.app/"
 languageCode = "pt-br"
 title = "Xicos Multimarcas"
-theme = ""
+theme = "ananke"
 publishDir = "public"
