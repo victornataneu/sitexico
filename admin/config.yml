@@ -20,4 +20,25 @@ collections:
           - { label: "Link da Promoção", name: "promo_link", widget: "string" }
           - { label: "Texto da Promoção", name: "promo_text", widget: "string" }
           - { label: "Título Principal", name: "main_heading", widget: "string" }
+          - { label: "Conteúdo Principal", name: "main_content", widget: "markdown" }collections:
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.md"
+        fields:
+          - { label: "Título da Página", name: "title", widget: "string" }
+          - { label: "Título de Cabeçalho", name: "header_title", widget: "string" }
+          - { label: "Subtítulo de Cabeçalho", name: "header_subtitle", widget: "string" }
+          - { label: "Link da Promoção", name: "promo_link", widget: "string" }
+          - { label: "Texto da Promoção", name: "promo_text", widget: "string" }
+          - { label: "Título Principal", name: "main_heading", widget: "string" }
           - { label: "Conteúdo Principal", name: "main_content", widget: "markdown" }
+          - label: "Imagens do Carrossel"
+            name: "carousel_images"
+            widget: "list"
+            fields:
+              - { label: "Imagem", name: "src", widget: "image" }
+              - { label: "Texto Alternativo", name: "alt", widget: "string" }
+
