@@ -3,8 +3,8 @@ backend:
   repo: victornataneu/sitexico
   branch: main
 
-media_folder: "assets/img"
-public_folder: "/assets/img"
+media_folder: "assets/img"  # Local onde as imagens serão salvas no repositório
+public_folder: "/assets/img"  # Caminho para acessar as imagens publicamente
 
 collections:
   - name: "pages"
@@ -12,7 +12,7 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "index.md"
+        file: "content/index.md"  # Caminho correto para o arquivo .md do Hugo
         fields:
           - { label: "Título da Página", name: "title", widget: "string" }
           - { label: "Título de Cabeçalho", name: "header_title", widget: "string" }
