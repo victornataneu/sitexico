@@ -5,7 +5,7 @@ header_subtitle: sadadadadafadada
 promo_link: https://exemplo.com/promo
 promo_text: Confira nossa promoção exclusiva
 main_heading: Nossas Ofertas
-main_content: Aqui você encontra as melhores ofertas em produtos multimarcas.
+main_content: Aqui você encontra as melhores ofertas em produtos multimarcas.ssggggsgsgsgs
 carousel_images:
   - src: /assets/img/exemplo1.jpg
     alt: Imagem 1
