@@ -3,7 +3,7 @@ backend:
   repo: victornataneu/sitexico
   branch: main
 
-media_folder: "assets/img"  # Local onde as imagens serão salvas no repositório
+media_folder: "static/assets/img"  # Atualizado para o caminho de imagens estáticas do Hugo
 public_folder: "/assets/img"  # Caminho para acessar as imagens publicamente
 
 collections:
@@ -12,7 +12,7 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "content/_index.md"  # Certifique-se de que o caminho esteja correto
+        file: "content/_index.md"  # O caminho para o arquivo no Hugo
         fields:
           - { label: "Título da Página", name: "title", widget: "string" }
           - { label: "Título de Cabeçalho", name: "header_title", widget: "string" }
