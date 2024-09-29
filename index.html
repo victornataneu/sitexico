@@ -8,6 +8,7 @@
 </head>
 <body>
     <section class="section-main">
+        <!-- Cabeçalho -->
         <header class="logo">
             <img class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
             <div class="main-img">
@@ -19,16 +20,19 @@
                 </h1>
             </div>
             <div class="promocao">
-                <a href="#" target="_blank"><img src="/assets/img/icons8-promotion.gif" alt="Botão de promoção"></a>
+                <a href="#" target="_blank">
+                    <img src="/assets/img/icons8-promotion.gif" alt="Botão de promoção">
+                </a>
                 <a class="linkpromocao" href="#" target="_blank">Promoções</a>
             </div>
         </header>
 
-        <!-- Link para Editar Conteúdo -->
+        <!-- Link para o painel administrativo -->
         <div class="edit-link">
             <a href="/admin/index.html">Editar Conteúdo</a>
         </div>
 
+        <!-- Navegação principal -->
         <nav class="nav">
             <ul>
                 <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Ícone camisa"></a></li>
@@ -41,6 +45,7 @@
             </ul>
         </nav>
 
+        <!-- Seção de destaques com carrossel -->
         <div class="content-destaques">
             <div class="carousel">
                 <div class="carousel-track">
@@ -52,26 +57,40 @@
                 </div>
             </div>
         </div>
+
+        <!-- Seção principal de conteúdo -->
         <div class="main">
             <h2>Faça sua encomenda conosco</h2>
             <p>
                 Não achou o que procurava? Não se preocupe! Fale conosco que vamos atrás do que precisa.<br>
-                Precisa de algum produto que não tem em nosso catálogo? Fale com a gente! <a href="https://wa.me/5562994953404" target="_blank"><img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).</a>
+                Precisa de algum produto que não tem em nosso catálogo? Fale com a gente!
+                <a href="https://wa.me/5562994953404" target="_blank">
+                    <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).
+                </a>
             </p>
+
             <h2>Regras de Entregas</h2>
             <p class="entregas">
-                <h3>Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!</h3><br>
+                Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!
             </p>
+
             <h2>Formas de Pagamento</h2>
             <div class="formapagamento">
-                <img src="/assets/img/visa.png" width="46px" height="46px">
-                <img src="/assets/img/card.png" width="46px" height="46px">
+                <img src="/assets/img/visa.png" width="46px" height="46px" alt="Visa">
+                <img src="/assets/img/card.png" width="46px" height="46px" alt="Cartão">
                 <p>Dividimos em até 6x nos cartões</p>
-                <img class="pix" src="/assets/img/icons8-pix-48.png" width="46px" height="46px">
-                <p>No Pix Desconto de até 10%</p>
+                <img class="pix" src="/assets/img/icons8-pix-48.png" width="46px" height="46px" alt="Pix">
+                <p>No Pix, desconto de até 10%</p>
             </div>
         </div>
+
+        <!-- Seção para carregar produtos dinamicamente -->
+        <section id="products" class="products-section">
+            <!-- O conteúdo dos produtos será carregado aqui pelo JavaScript -->
+        </section>
     </section>
+
+    <!-- Rodapé -->
     <footer class="rodape">
         <h1>Fale Conosco</h1>
         <div class="redes-sociais-e-contatos">
@@ -98,14 +117,49 @@
     <script>
         // Inicializa o Netlify CMS após o carregamento do script
         document.addEventListener("DOMContentLoaded", function() {
-            // Espera o script do CMS ser carregado
-            if (window.CMS) { // Verifica se o CMS está definido
+            if (window.CMS) {
                 CMS.init({
                     target: "#cms" // Alvo para o CMS se anexar
                 });
             } else {
                 console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
             }
+        });
+
+        // Script para carregar produtos dinamicamente
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/produtos/index.json')
+            .then(response => response.json())
+            .then(data => {
+                const productsSection = document.getElementById('products');
+
+                data.forEach(product => {
+                    const productDiv = document.createElement('div');
+                    productDiv.className = 'product';
+
+                    const productImg = document.createElement('img');
+                    productImg.src = product.imagem;
+                    productImg.alt = product.nome;
+                    productDiv.appendChild(productImg);
+
+                    const productName = document.createElement('h3');
+                    productName.textContent = product.nome;
+                    productDiv.appendChild(productName);
+
+                    const productDescription = document.createElement('p');
+                    productDescription.textContent = product.descricao;
+                    productDiv.appendChild(productDescription);
+
+                    const productPrice = document.createElement('p');
+                    productPrice.textContent = `R$ ${product.preco}`;
+                    productDiv.appendChild(productPrice);
+
+                    productsSection.appendChild(productDiv);
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao carregar os produtos:', error);
+            });
         });
     </script>
 </body>
