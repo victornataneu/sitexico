@@ -51,21 +51,21 @@
     </section>
 
     <footer class="rodape">
-        <h1>Fale Conosco</h1>
-        <div class="redes-sociais-e-contatos">
-            <a href="https://www.instagram.com/xico__multimarcas" target="_blank">
-                <img src="/assets/img/icons8-instagram.svg" alt="Instagram">
+    <h1>Fale Conosco</h1>
+    <div class="redes-sociais-e-contatos">
+        {% for social in page.social_links %}
+            <a href="{{ social.link }}" target="_blank">
+                <img src="{{ social.icon }}" alt="{{ social.alt }}">
             </a>
-            <a href="https://wa.me/5562994953404" target="_blank">
-                <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">
+        {% endfor %}
+        <p>
+            <a href="{{ page.address_link }}" target="_blank">
+                <img src="/assets/img/addresswhite.png" alt="Endereço">
             </a>
-            <p>
-                <a href="https://www.google.com.br/maps/place/Xico+Multimarcas/@-15.7540268,-58.550024,6z/data=!4m10!1m2!2m1!1sxico+multimarcas!3m6!1s0x935c559301c2d2b7:0x317a565c0fdb8b52!8m2!3d-15.7540268!4d-49.3215084!15sChB4aWNvIG11bHRpbWFyY2FzWhIiEHhpY28gbXVsdGltYXJjYXOSAQ5jbG90aGluZ19zdG9yZeABAA!16s%2Fg%2F11q9qytm0_?entry=ttu&g_ep=EgoyMDI0MDkyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-                    <img src="/assets/img/addresswhite.png" alt="Endereço">
-                </a>
-                <span class="ende">R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000</span>
-            </p>
-        </div>
-    </footer>
+            <span class="ende">{{ page.address }}</span>
+        </p>
+    </div>
+</footer>
+
 </body>
 </html>
