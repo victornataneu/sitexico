@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: seu-usuario/seu-repositorio # substitua com seu repositório
+  repo: victornataneu/sitexico # substitua com seu repositório
   branch: main # ou o branch que você estiver usando
 
 media_folder: "assets/img" # Onde as imagens serão armazenadas
