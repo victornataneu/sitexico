@@ -12,7 +12,7 @@ collections:
     files:
       - label: "Home Page"
         name: "home"
-        file: "content/_index.md"  # Caminho correto para o arquivo .md do Hugo
+        file: "_index.md"  # Caminho correto para o arquivo .md do Hugo
         fields:
           - { label: "Título da Página", name: "title", widget: "string" }
           - { label: "Título de Cabeçalho", name: "header_title", widget: "string" }
