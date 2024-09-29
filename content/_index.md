@@ -1,7 +1,7 @@
 ---
 title: qq1q1q1q1
 header_title: "24242342442"
-header_subtitle: As melhores ofertas para você
+header_subtitle: sadadadadafadada
 promo_link: https://exemplo.com/promo
 promo_text: Confira nossa promoção exclusiva
 main_heading: Nossas Ofertas
