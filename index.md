@@ -11,3 +11,13 @@ main_content: >-
 
   Precisa de algum produto que não tem em nosso catálogo? Fale com a gente! [Clique aqui](https://wa.me/5562994953404).
 ---
+carousel_images:
+  - src: "/assets/img/jaragua-go.jpg"
+    alt: "Produto 1"
+  - src: "/assets/img/jaragua-go.jpg"
+    alt: "Produto 2"
+  - src: "/assets/img/jaragua-go.jpg"
+    alt: "Produto 3"
+  - src: "/assets/img/jaragua-go.jpg"
+    alt: "Produto 4"
+---
