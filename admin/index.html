@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netlify CMS</title>
-    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url">
+    <link rel="cms-config-url" href="/admin/config.yml">
 </head>
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@^2.15.0/dist/netlify-cms.js"></script>
-    <script>
-        window.onload = function() {
-            if (typeof CMS !== 'undefined') {
-                CMS.init();
-            } else {
-                console.error("CMS não está definido. Verifique se o script foi carregado corretamente.");
-            }
-        };
-    </script>
+    <!-- Adicione aqui o elemento onde o Netlify CMS será anexado -->
+    <div id="cms"></div>
+
+    <!-- Inclua o script do Netlify CMS no final do body -->
+    <script src="https://unpkg.com/netlify-cms@latest"></script>
 </body>
 </html>
