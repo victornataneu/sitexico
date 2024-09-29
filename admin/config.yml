@@ -49,3 +49,14 @@ collections:
               - { label: "Link", name: "link", widget: "string" }
               - { label: "Ícone", name: "icon", widget: "image" }
               - { label: "Texto Alternativo", name: "alt", widget: "string" }
+
+                    - label: "Links das Redes Sociais"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Ícone", name: "icon", widget: "image" }
+              - { label: "Texto Alternativo", name: "alt", widget: "string" }
+          - { label: "Link do Endereço", name: "address_link", widget: "string" }
+          - { label: "Endereço", name: "address", widget: "string" }
+
