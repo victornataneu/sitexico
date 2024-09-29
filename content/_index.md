@@ -7,7 +7,9 @@ promo_text: Confira nossa promoção exclusiva
 main_heading: Nossas Ofertas
 main_content: Aqui você encontra as melhores ofertas em produtos multimarcas.ssggggsgsgsgs
 carousel_images:
-  - src: /assets/img/exemplo1.jpg
+  - src: /assets/img/DALL·E 2024-09-23 19.08.37 - A clean and bright
+      environmental-themed background image featuring elements of nature and
+      sustainability. The scene includes a landscape with lush gre.webp
     alt: Imagem 1
   - src: /assets/img/exemplo2.jpg
     alt: Imagem 2
