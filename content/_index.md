@@ -26,5 +26,5 @@ social_links:
     icon: /assets/img/linkedin-icon.png
     alt: LinkedIn
 address_link: https://maps.google.com
-address: Rua Exemplo, 123
+address: dasdfsdg3 5566666
 ---
