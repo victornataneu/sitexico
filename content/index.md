@@ -1,28 +1,30 @@
 ---
-title: "Xico Multimarcas"
-header_title: "Enviamos para todo o Brasil!"
-header_subtitle: "Faça sua encomenda!"
-promo_link: "https://seupromo.com"
-promo_text: "Promoções"
-main_heading: "Faça sua encomenda conosco"
-main_content: >-
-  Não achou o que procurava? Não se preocupe. Fale conosco que vamos atrás do que
-  precisa.
-
-  Precisa de algum produto que não tem em nosso catálogo? Fale com a gente! [Clique aqui](https://wa.me/5562994953404).
+title: "Título da Página"
+header_title: "Título de Cabeçalho"
+header_subtitle: "Subtítulo de Cabeçalho"
+promo_link: "https://exemplo.com"
+promo_text: "Promoção Exclusiva"
+main_heading: "Título Principal"
+main_content: "Esse é o conteúdo principal da página."
 carousel_images:
-  - src: "/assets/img/jaragua-go.jpg"
-    alt: "Produto 1"
-  - src: "/assets/img/jaragua-go.jpg"
-    alt: "Produto 2"
+  - src: "/assets/img/exemplo1.jpg"
+    alt: "Imagem 1"
+  - src: "/assets/img/exemplo2.jpg"
+    alt: "Imagem 2"
 nav_items:
-  - link: "/indexcamisa.html"
-    icon: "/assets/img/camisaicon.png"
-    alt: "Ícone camisa"
+  - link: "https://google.com"
+    icon: "/assets/img/icon1.png"
+    alt: "Icone Google"
+  - link: "https://facebook.com"
+    icon: "/assets/img/icon2.png"
+    alt: "Icone Facebook"
 social_links:
-  - link: "https://www.instagram.com/xico__multimarcas"
-    icon: "/assets/img/icons8-instagram.svg"
+  - link: "https://instagram.com"
+    icon: "/assets/img/instagram-icon.png"
     alt: "Instagram"
-address_link: "https://www.google.com.br/maps/place/Xico+Multimarcas"
-address: "R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000"
+  - link: "https://linkedin.com"
+    icon: "/assets/img/linkedin-icon.png"
+    alt: "LinkedIn"
+address_link: "https://maps.google.com"
+address: "Rua Exemplo, 123"
 ---
