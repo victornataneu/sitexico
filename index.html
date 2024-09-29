@@ -11,39 +11,39 @@
         <header class="logo">
             <img class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
             <div class="main-img">
-                <h1><img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> {{ page.header_title }}</h1>
-                <h1><img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> {{ page.header_subtitle }}</h1>
+                <h1><img class="img-02" src="/assets/img/icons8-box.svg" alt="Ícone de caixa"> {{ page.header_title }}</h1>
+                <h1><img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Ícone do WhatsApp"> {{ page.header_subtitle }}</h1>
             </div>
             <div class="promocao">
-                <a href="{{ page.promo_link }}" target="_blank"><img src="/assets/img/icons8-promotion.gif" alt="botao de promoção"></a>
+                <a href="{{ page.promo_link }}" target="_blank">
+                    <img src="/assets/img/icons8-promotion.gif" alt="Botão de promoção">
+                </a>
                 <a class="linkpromocao" href="{{ page.promo_link }}" target="_blank">{{ page.promo_text }}</a>
             </div>
         </header>
 
         <nav class="nav">
-    <ul>
-        {% for item in page.nav_items %}
-            <li>
-                <a href="{{ item.link }}" target="_blank">
-                    <img src="{{ item.icon }}" alt="{{ item.alt }}">
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</nav>
-
+            <ul>
+                {% for item in page.nav_items %}
+                    <li>
+                        <a href="{{ item.link }}" target="_blank">
+                            <img src="{{ item.icon }}" alt="{{ item.alt }}">
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </nav>
 
         <div class="content-destaques">
-    <div class="carousel">
-        <div class="carousel-track">
-            {% for image in page.carousel_images %}
-                <img src="{{ image.src }}" alt="{{ image.alt }}">
-            {% endfor %}
+            <div class="carousel">
+                <div class="carousel-track">
+                    {% for image in page.carousel_images %}
+                        <img src="{{ image.src }}" alt="{{ image.alt }}">
+                    {% endfor %}
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-        
         <div class="main">
             <h2>{{ page.main_heading }}</h2>
             <p>{{ page.main_content }}</p>
@@ -51,21 +51,21 @@
     </section>
 
     <footer class="rodape">
-    <h1>Fale Conosco</h1>
-    <div class="redes-sociais-e-contatos">
-        {% for social in page.social_links %}
-            <a href="{{ social.link }}" target="_blank">
-                <img src="{{ social.icon }}" alt="{{ social.alt }}">
-            </a>
-        {% endfor %}
-        <p>
-            <a href="{{ page.address_link }}" target="_blank">
-                <img src="/assets/img/addresswhite.png" alt="Endereço">
-            </a>
-            <span class="ende">{{ page.address }}</span>
-        </p>
-    </div>
-</footer>
+        <h1>Fale Conosco</h1>
+        <div class="redes-sociais-e-contatos">
+            {% for social in page.social_links %}
+                <a href="{{ social.link }}" target="_blank">
+                    <img src="{{ social.icon }}" alt="{{ social.alt }}">
+                </a>
+            {% endfor %}
+            <p>
+                <a href="{{ page.address_link }}" target="_blank">
+                    <img src="/assets/img/addresswhite.png" alt="Endereço">
+                </a>
+                <span class="ende">{{ page.address }}</span>
+            </p>
+        </div>
+    </footer>
 
 </body>
 </html>
