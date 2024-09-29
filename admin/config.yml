@@ -1,23 +1,23 @@
 backend:
   name: github
-  repo: victornataneu/sitexico # substitua com seu repositório
+  repo: victornataneu/sitexico
   branch: main
 
-media_folder: "assets/img" # Onde as imagens serão armazenadas
-public_folder: "/assets/img" # Caminho público para as imagens
+media_folder: "assets/img"
+public_folder: "/assets/img"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "folder" # pasta onde os posts estão armazenados (ajustado para "folder")
-    create: true
-    delete: true
-    fields:
-      - { label: "Título", name: "title", widget: "string" }
-      - { label: "Conteúdo", name: "body", widget: "markdown" }
-      - { label: "Imagem", name: "image", widget: "image" }
-      - { label: "Data", name: "date", widget: "datetime" }
-      - { label: "Publicar", name: "published", widget: "boolean", default: true }
-
-site_url: "https://catalogoxicomultimarcas.netlify.app" # Substitua pelo URL do seu site
-display_url: "https://catalogoxicomultimarcas.netlify.app/#/"
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "index.md"
+        fields:
+          - { label: "Título da Página", name: "title", widget: "string" }
+          - { label: "Título de Cabeçalho", name: "header_title", widget: "string" }
+          - { label: "Subtítulo de Cabeçalho", name: "header_subtitle", widget: "string" }
+          - { label: "Link da Promoção", name: "promo_link", widget: "string" }
+          - { label: "Texto da Promoção", name: "promo_text", widget: "string" }
+          - { label: "Título Principal", name: "main_heading", widget: "string" }
+          - { label: "Conteúdo Principal", name: "main_content", widget: "markdown" }
