@@ -43,3 +43,15 @@ nav_items:
   - link: "#"
     icon: "/assets/img/joiasicon.png"
     alt: "Icone joias"
+
+social_links:
+  - link: "https://www.instagram.com/xico__multimarcas"
+    icon: "/assets/img/icons8-instagram.svg"
+    alt: "Instagram"
+  - link: "https://wa.me/5562994953404"
+    icon: "/assets/img/icons8-whatsapp.svg"
+    alt: "WhatsApp"
+
+address_link: "https://www.google.com.br/maps/place/Xico+Multimarcas/@-15.7540268,-58.550024,6z"
+address: "R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000"
+
