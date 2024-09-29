@@ -20,7 +20,7 @@ nav_items:
     alt: Facebook
 social_links:
   - link: https://instagram.com
-    icon: /assets/img/instagram-icon.png
+    icon: /assets/img/4d82faac480f181197757312539d52d0.webp
     alt: Instagram
   - link: https://linkedin.com
     icon: /assets/img/linkedin-icon.png
