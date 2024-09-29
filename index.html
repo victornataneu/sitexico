@@ -1,24 +1,31 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>Xicos Multimarcas</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
+    
 </head>
 <body>
     <section class="section-main">
         <header class="logo">
             <img class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
             <div class="main-img">
-                <h1>{{ page.header_title }}</h1>
-                <h1>{{ page.header_subtitle }}</h1>
+                <h1>
+                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> Enviamos para todo o Brasil!
+                </h1>
+                <h1>
+                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> Faça sua encomenda!
+                </h1>
             </div>
             <div class="promocao">
-                <a href="{{ page.promo_link }}" target="_blank">{{ page.promo_text }}</a>
+                <a href="#" target="_blank"><img src="/assets/img/icons8-promotion.gif" alt="botao de promoção"></a>
+                <a class="linkpromocao" href="#" target="_blank">Promoções</a>
             </div>
         </header>
-
+        
         <nav class="nav">
             <ul>
                 <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Icone camisa"></a></li>
@@ -30,20 +37,47 @@
                 <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Icone joias"></a></li>
             </ul>
         </nav>
-
+        <div class="content-destaques">
+            <div class="carousel">
+                <div class="carousel-track">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 1" >
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 2">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 3">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 4">
+                    <img src="/assets/img/jaragua-go.jpg" alt="Produto 4">
+                </div>
+            </div>
+        </div>
         <div class="main">
-            <h2>{{ page.main_heading }}</h2>
-            <p>{{ page.main_content }}</p>
+            <h2>Faça sua encomenda conosco</h2>
+            <p>
+                Não achou o que procurava? Não se preocupe! Fale conosco que vamos atrás do que precisa.<br>
+                Precisa de algum produto que não tem em nosso catálogo? Fale com a gente! <a href="https://wa.me/5562994953404" target="_blank"><img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">(Clique aqui).
+                </a>
+            </p>
+            <h2>Regras de Entregas</h2>
+            <p class="entregas">
+                <h3>Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!</h3><br>
+
+            </p>
+            <h2>Formas de Pagamento</h2>
+            <div class="formapagamento">
+                <img src="/assets/img/visa.png" width="46px" height="46px">
+                <img src="/assets/img/card.png" width="46px" height="46px">
+                <p>Dividimos em até 6x nos cartões</p>
+                <img class="pix" src="/assets/img/icons8-pix-48.png" width="46px" height="46px">
+                <p>No Pix Desconto de até 10%</p>
+            </div>
+            
         </div>
     </section>
-
     <footer class="rodape">
         <h1>Fale Conosco</h1>
         <div class="redes-sociais-e-contatos">
             <a href="https://www.instagram.com/xico__multimarcas" target="_blank">
                 <img src="/assets/img/icons8-instagram.svg" alt="Instagram">
             </a>
-            <a href="https://wa.me/5562994953404" target="_blank">
+            <a href="hhttps://wa.me/5562994953404" target="_blank">
                 <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">
             </a>
             <p>
@@ -51,11 +85,11 @@
                     <img src="/assets/img/addresswhite.png" alt="Endereço">
                 </a>
                 <span class="ende">R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000</span>
+               
             </p>
+            
+            
         </div>
     </footer>
-
-    <!-- Script do Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
 </body>
 </html>
