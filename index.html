@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/assets/css/xicos.css">
+</head>
+<body>
+    <section class="section-main">
+        <header class="logo">
+            <img class="imglogo-01" src="/assets/img/logoxico.jpeg" alt="Logo da empresa">
+            <div class="main-img">
+                <h1><img class="img-02" src="/assets/img/icons8-box.svg" alt="Ícone de caixa"> {{ .Params.header_title }}</h1>
+                <h1><img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Ícone do WhatsApp"> {{ .Params.header_subtitle }}</h1>
+            </div>
+            <div class="promocao">
+                <a href="{{ .Params.promo_link }}" target="_blank">
+                    <img src="/assets/img/icons8-promotion.gif" alt="Botão de promoção">
+                </a>
+                <a class="linkpromocao" href="{{ .Params.promo_link }}" target="_blank">{{ .Params.promo_text }}</a>
+            </div>
+        </header>
+
+        <nav class="nav">
+            <ul>
+                {{ range .Params.nav_items }}
+                    <li>
+                        <a href="{{ .link }}" target="_blank">
+                            <img src="{{ .icon }}" alt="{{ .alt }}">
+                        </a>
+                    </li>
+                {{ end }}
+            </ul>
+        </nav>
+
+        <div class="content-destaques">
+            <div class="carousel">
+                <div class="carousel-track">
+                    {{ range .Params.carousel_images }}
+                        <img src="{{ .src }}" alt="{{ .alt }}">
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <h2>{{ .Params.main_heading }}</h2>
+            <p>{{ .Params.main_content }}</p>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <h1>Fale Conosco</h1>
+        <div class="redes-sociais-e-contatos">
+            {{ range .Params.social_links }}
+                <a href="{{ .link }}" target="_blank">
+                    <img src="{{ .icon }}" alt="{{ .alt }}">
+                </a>
+            {{ end }}
+            <p>
+                <a href="{{ .Params.address_link }}" target="_blank">
+                    <img src="/assets/img/addresswhite.png" alt="Endereço">
+                </a>
+                <span class="ende">{{ .Params.address }}</span>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
