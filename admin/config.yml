@@ -42,3 +42,10 @@ collections:
               - { label: "Imagem", name: "src", widget: "image" }
               - { label: "Texto Alternativo", name: "alt", widget: "string" }
 
+            - label: "Itens de Navegação"
+            name: "nav_items"
+            widget: "list"
+            fields:
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Ícone", name: "icon", widget: "image" }
+              - { label: "Texto Alternativo", name: "alt", widget: "string" }
