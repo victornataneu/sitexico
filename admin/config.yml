@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: victornataneu/sitexico # substitua com seu repositório
-  branch: main # ou o branch que você estiver usando
+  branch: main
 
 media_folder: "assets/img" # Onde as imagens serão armazenadas
 public_folder: "/assets/img" # Caminho público para as imagens
@@ -9,7 +9,7 @@ public_folder: "/assets/img" # Caminho público para as imagens
 collections:
   - name: "posts"
     label: "Posts"
-    folder: "posts" # pasta onde seus posts são armazenados
+    folder: "folder" # pasta onde os posts estão armazenados (ajustado para "folder")
     create: true
     delete: true
     fields:
@@ -19,6 +19,5 @@ collections:
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Publicar", name: "published", widget: "boolean", default: true }
 
-# Opções de configuração adicional
 site_url: "https://catalogoxicomultimarcas.netlify.app" # Substitua pelo URL do seu site
-display_url: "https://catalogoxicomultimarcas.netlify.app/#/" # URL que será exibido no CMS
+display_url: "https://catalogoxicomultimarcas.netlify.app/#/"
