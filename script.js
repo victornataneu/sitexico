@@ -1,41 +1,43 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch('/produtos/index.json') // Certifique-se de que a rota corresponde ao caminho dos seus arquivos JSON/Markdown
-        .then(response => response.json()) // Se estiver usando JSON
+    // Fetch data from the JSON file
+    fetch('./edicao-entrega/entregas.json')
+        .then(response => response.json())
         .then(data => {
-            const productsDiv = document.getElementById('products');
-            data.forEach(product => {
-                // Cria o elemento para o produto
-                let productElement = document.createElement('div');
-                productElement.className = 'product-item';
-                
-                // Imagem do produto
-                let imgElement = document.createElement('img');
-                imgElement.src = product.imagem;
-                imgElement.alt = product.nome;
+            // Atualizar títulos
+            document.getElementById("titulo-envios-brasil").innerText = data.titulo_envios_brasil;
+            document.getElementById("titulo-faca-encomenda").innerText = data.titulo_faca_encomenda;
 
-                // Nome do produto
-                let nameElement = document.createElement('h3');
-                nameElement.textContent = product.nome;
+            // Atualizar link e texto da promoção
+            const promocaoLink = document.getElementById("promocao-link");
+            promocaoLink.href = data.promocao_link;
+            document.getElementById("promocao-texto").innerText = data.promocao_texto;
 
-                // Descrição do produto
-                let descElement = document.createElement('p');
-                descElement.textContent = product.descricao;
-
-                // Preço do produto
-                let priceElement = document.createElement('span');
-                priceElement.textContent = `R$ ${product.preco}`;
-
-                // Adiciona os elementos ao container do produto
-                productElement.appendChild(imgElement);
-                productElement.appendChild(nameElement);
-                productElement.appendChild(descElement);
-                productElement.appendChild(priceElement);
-
-                // Adiciona o produto ao container principal
-                productsDiv.appendChild(productElement);
+            // Atualizar imagens do carousel
+            const carouselTrack = document.querySelector(".carousel-track");
+            carouselTrack.innerHTML = ''; // Limpa o conteúdo atual
+            data.carousel_images.forEach(imageUrl => {
+                const imgElement = document.createElement("img");
+                imgElement.src = imageUrl;
+                carouselTrack.appendChild(imgElement);
             });
+
+            // Atualizar mensagem de encomenda e WhatsApp
+            document.getElementById("mensagem-encomenda").innerText = data.mensagem_encomenda;
+            const whatsappLink = document.getElementById("whatsapp-link");
+            whatsappLink.href = data.whatsapp_link;
+
+            // Atualizar regras de entrega
+            document.getElementById("regras-entrega").innerText = data.regras_entrega;
+
+            // Atualizar formas de pagamento
+            const formasPagamentoDiv = document.getElementById("formas-pagamento");
+            formasPagamentoDiv.innerHTML = `
+                <p>${data.formas_pagamento.descricao}</p>
+                <p>${data.formas_pagamento.desconto_pix}</p>
+            `;
+
+            // Atualizar endereço
+            document.getElementById("endereco").innerText = data.endereco;
         })
-        .catch(error => {
-            console.error("Erro ao carregar produtos:", error);
-        });
+        .catch(error => console.error('Erro ao carregar o JSON:', error));
 });
