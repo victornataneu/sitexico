@@ -1,0 +1,45 @@
+backend:
+  name: github
+  repo: victornataneu/sitexico
+  branch: main
+
+media_folder: "static/assets/img"  # Atualizado para o caminho de imagens estáticas do Hugo
+public_folder: "/assets/img"  # Caminho para acessar as imagens publicamente
+
+collections:
+  - name: "pages"
+    label: "Páginas"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "content/_index.md"  # O caminho para o arquivo no Hugo
+        fields:
+          - { label: "Título da Página", name: "title", widget: "string" }
+          - { label: "Título de Cabeçalho", name: "header_title", widget: "string" }
+          - { label: "Subtítulo de Cabeçalho", name: "header_subtitle", widget: "string" }
+          - { label: "Link da Promoção", name: "promo_link", widget: "string" }
+          - { label: "Texto da Promoção", name: "promo_text", widget: "string" }
+          - { label: "Título Principal", name: "main_heading", widget: "string" }
+          - { label: "Conteúdo Principal", name: "main_content", widget: "markdown" }
+          - label: "Imagens do Carrossel"
+            name: "carousel_images"
+            widget: "list"
+            fields:
+              - { label: "Imagem", name: "src", widget: "image" }
+              - { label: "Texto Alternativo", name: "alt", widget: "string" }
+          - label: "Itens de Navegação"
+            name: "nav_items"
+            widget: "list"
+            fields:
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Ícone", name: "icon", widget: "image" }
+              - { label: "Texto Alternativo", name: "alt", widget: "string" }
+          - label: "Links das Redes Sociais"
+            name: "social_links"
+            widget: "list"
+            fields:
+              - { label: "Link", name: "link", widget: "string" }
+              - { label: "Ícone", name: "icon", widget: "image" }
+              - { label: "Texto Alternativo", name: "alt", widget: "string" }
+          - { label: "Link do Endereço", name: "address_link", widget: "string" }
+          - { label: "Endereço", name: "address", widget: "string" }
