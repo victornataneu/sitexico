@@ -1098,8 +1098,9 @@
   }
 
   .carousel img {
-      width: 100%; /* A largura continua ocupando 100% */
+      max-width: 100%; /* A largura continua ocupando 100% */
       object-fit: contain; /* Ajusta o ajuste da imagem para que ela se encaixe completamente */
+      background-size: cover;
       
   }
 
