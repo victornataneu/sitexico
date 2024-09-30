@@ -138,26 +138,27 @@
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem black;
     margin-bottom: 3rem;
     max-width: 100%;
-    overflow: hidden; /* Previne transbordamento do contêiner */
+    overflow: hidden; /* Previne transbordamento */
 }
 
 /* Estilo para o grid container */
 .grid-container {
-    display: grid; /* Usar grid layout */
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Ajuste automático das colunas */
+    display: flex; /* Usar flexbox para layout mais responsivo */
+    flex-wrap: wrap; /* Permitir que as imagens quebrem para a linha seguinte */
+    justify-content: space-between; /* Distribui espaço entre as imagens */
     gap: 1rem; /* Espaço entre as imagens */
 }
 
 /* Estilo para as imagens */
 .grid-container img {
-    width: 100%; /* A imagem ocupa 100% da largura da célula */
+    flex: 1 1 18rem; /* Reduzir a largura mínima para 18rem */
+    max-width: 100%; /* A imagem ocupa 100% da largura da célula */
     height: auto; /* Mantém a proporção da imagem */
-    max-height: 18rem; /* Altura máxima para as imagens */
+    max-height: 18rem; /* Define uma altura máxima para as imagens */
     object-fit: cover; /* Cobre o espaço da imagem sem distorcer */
     border-radius: 8px; /* Bordas arredondadas */
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
-
 
 
 
