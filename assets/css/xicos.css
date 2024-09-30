@@ -350,7 +350,7 @@
 
 /* Estilo para cada imagem */
 .carousel img {
-  width: 100%; /* Cada imagem ocupa 100% da largura do contêiner */
+  max-width: 100%; /* Cada imagem ocupa 100% da largura do contêiner COLOQUE MAX-WIDTH */
   height: auto;
   border: 0.1rem solid black;
   display: flex;
