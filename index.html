@@ -105,6 +105,119 @@
                 window.location.href = `indexcamisa.html?search=${query}`;
             }
         }
+
+        function toggleChat() {
+        const chatbox = document.querySelector('.chatbox-container');
+        chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
+        }
+
+
+
+        let step = 0;  // Variável para controlar o estado da conversa
+
+        function toggleChat() {
+            const chatbox = document.querySelector('.chatbox-container');
+            chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatboxInput');
+            const message = input.value.trim();
+
+            if (message) {
+                const chatboxBody = document.getElementById('chatboxBody');
+
+                // Adiciona a mensagem do usuário
+                const userMessageDiv = document.createElement('div');
+                userMessageDiv.classList.add('chat-message', 'user-message');
+                userMessageDiv.textContent = message;
+                chatboxBody.appendChild(userMessageDiv);
+
+                // Verifica o estado da conversa e responde dinamicamente
+                setTimeout(() => {
+                    botResponse(message);
+                    chatboxBody.scrollTop = chatboxBody.scrollHeight;
+                }, 500);  // Simula um pequeno atraso de resposta do bot
+
+                // Limpa o campo de entrada
+                input.value = '';
+            }
+        }
+
+        function botResponse(userMessage) {
+            const chatboxBody = document.getElementById('chatboxBody');
+            const botMessageDiv = document.createElement('div');
+            botMessageDiv.classList.add('chat-message', 'bot-message');
+
+            if (step === 0) {
+                // Menu inicial de opções
+                botMessageDiv.innerHTML = `
+                    Escolha uma das opções abaixo:<br>
+                    1 - Informações sobre produtos<br>
+                    2 - Promoções<br>
+                    3 - Regras de entrega<br>
+                    4 - Formas de pagamento<br>
+                    5 - Encomendar produto<br>
+                    6 - Fale conosco
+                `;
+                step = 1;  // Avança para a próxima etapa
+            } else if (step === 1) {
+                // Responde de acordo com a escolha do cliente
+                switch (userMessage) {
+                    case '1':
+                        botMessageDiv.textContent = "Você escolheu 'Informações sobre produtos'. Nossos produtos incluem camisetas, bermudas, calças, bonés e muito mais. Faça uma busca no campo 'Buscar'. Caso não encontre o que procura, fale conosco digitando 6.";
+                        break;
+                    case '2':
+                        botMessageDiv.textContent = "Você escolheu 'Promoções'. Atualmente, temos descontos especiais em Pix e até 6x sem juros nos cartões! Confira também no ícone de promoções na página inicial. Tenho certeza que algo vai te agradar!";
+                        break;
+                    case '3':
+                        botMessageDiv.textContent = "Você escolheu 'Regras de entrega'. Entregas em Jaraguá-GO para compras acima de R$ 100 são isentas de taxa de frete. Para compras menores, há uma taxa de R$ 5. Ainda em dúvida? Digite 6 e fale com um de nossos atendentes.";
+                        break;
+                    case '4':
+                        botMessageDiv.textContent = "Você escolheu 'Formas de pagamento'. Aceitamos Visa, Mastercard, e Pix com 10% de desconto.";
+                        break;
+                    case '5':
+                        botMessageDiv.innerHTML = `Você escolheu 'Encomendar produto'. Não achou o que procurava? Vamos te ajudar! 
+                        <a href="https://wa.me/5562994953404" target="_blank">
+                            <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp"> Clique aqui para nos contatar no WhatsApp.
+                        </a>`;
+                        break;
+                    case '6':
+                    botMessageDiv.innerHTML = `Você escolheu 'Fale conosco'. Envie uma mensagem no WhatsApp para que possamos ajudar você diretamente! 
+                        <a href="https://wa.me/5562994953404" target="_blank">
+                            <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp"> Clique aqui para nos contatar no WhatsApp.
+                        </a>`;
+                        break;
+                    default:
+                        botMessageDiv.textContent = "Opção inválida. Por favor, escolha uma das opções: 1, 2, 3, 4, 5 ou 6.";
+                        step = 1;  // Mantém no mesmo passo até escolher corretamente
+                        break;
+                }
+            }
+
+            chatboxBody.appendChild(botMessageDiv);
+            chatboxBody.scrollTop = chatboxBody.scrollHeight;  // Faz o scroll até o final
+        }
+
     </script>
+
+    <div class="chatbox-container">
+        <div class="chatbox-header">
+            <h3>Chat com Xicos Multimarcas</h3>
+            <button class="close-chat" onclick="toggleChat()">X</button>
+        </div>
+        <div class="chatbox-body" id="chatboxBody">
+            <div class="chat-message bot-message">
+                Olá! Eu sou o Xiquinho! No que posso te ajudar? Resuma sua dúvida em uma palavra!
+            </div>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="chatboxInput" placeholder="Digite sua mensagem..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+    <button class="chatbox-toggle" onclick="toggleChat()">Chat</button>
+
+
 </body>
 </html>
