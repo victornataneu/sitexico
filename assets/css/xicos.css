@@ -77,13 +77,14 @@
 
 .section-main {
   display: grid;
-  grid-template-rows: 11rem 6rem  auto 45rem 1fr; /* Corrigido para usar espaços */
+  grid-template-rows: 11rem 6rem auto 45rem auto 1fr; /* Corrigido para usar espaços */
   grid-template-columns: 1fr;
   grid-template-areas: 
       'logo' 
       'icons' 
       'search'
-      'destaques' 
+      'destaques'
+      'calculadora'
       'main';
      
 }
@@ -306,15 +307,18 @@
 
 
 .btn-buscar{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     background-color: black;
     color: white;
+    box-shadow: 2px 2px 2px black;
 }
 
 
 
 
 .btn-buscar:hover{
+    background-color: white;
+    color: black;
     cursor: pointer;
 }
 
@@ -456,6 +460,75 @@
     border-radius: 5px;
     cursor: pointer;
     }
+
+
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+    
+    .grid-calculadora h1{
+      display: flex;
+      justify-content: center;
+      background-color: #000; /* Fundo preto */
+      align-items: center;
+      color: #fff; /* Texto branco */
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      height: 1rem;
+    }
+    
+    
+    
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px;
+        position: relative;
+        left: 37%;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    
+
+
+
   
 }
 
@@ -622,6 +695,72 @@
 
     .btn-buscar:hover{
         cursor: pointer;
+    }
+
+
+
+
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+    
+    .grid-calculadora h1{
+      display: flex;
+      justify-content: center;
+      background-color: #000; /* Fundo preto */
+      align-items: center;
+      color: #fff; /* Texto branco */
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      height: 1rem;
+    }
+    
+    
+    
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px; /*AQUI EU COLOQUEI PRA MAX ELE SE AJUSTOU AUTOMATICO, SEM DEU PRECISAR MEXER MUITO.*/
+        position: relative;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
+        font-weight: bold;
     }
 
     
@@ -1220,6 +1359,75 @@
     }
 
 
+
+        /*CALCULADORA*/
+
+
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+    
+    .grid-calculadora h1{
+      display: flex;
+      justify-content: center;
+      background-color: #000; /* Fundo preto */
+      align-items: center;
+      color: #fff; /* Texto branco */
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      height: 1rem;
+    }
+    
+    
+    
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px; /*AQUI EU COLOQUEI PRA MAX ELE SE AJUSTOU AUTOMATICO, SEM DEU PRECISAR MEXER MUITO.*/
+        position: relative;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+    
+
+
      
 
     
@@ -1571,6 +1779,71 @@
         text-align: right;
     }
 
+
+
+
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+    
+    .grid-calculadora h1{
+      display: flex;
+      justify-content: center;
+      background-color: #000; /* Fundo preto */
+      align-items: center;
+      color: #fff; /* Texto branco */
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      height: 1rem;
+    }
+    
+    
+    
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px; /*AQUI EU COLOQUEI PRA MAX ELE SE AJUSTOU AUTOMATICO, SEM DEU PRECISAR MEXER MUITO.*/
+        position: relative;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
+        font-weight: bold;
+    }
 
 
 
@@ -1934,6 +2207,71 @@
 
 
 
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+    
+    .grid-calculadora h1{
+      display: flex;
+      justify-content: center;
+      background-color: #000; /* Fundo preto */
+      align-items: center;
+      color: #fff; /* Texto branco */
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      height: 1rem;
+    }
+    
+    
+    
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px; /*AQUI EU COLOQUEI PRA MAX ELE SE AJUSTOU AUTOMATICO, SEM DEU PRECISAR MEXER MUITO.*/
+        position: relative;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+
+
 
 }
 
@@ -2289,6 +2627,72 @@
 
 
 
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+    
+    .grid-calculadora h1{
+      display: flex;
+      justify-content: center;
+      background-color: #000; /* Fundo preto */
+      align-items: center;
+      color: #fff; /* Texto branco */
+      text-align: center;
+      padding: 2rem;
+      border-radius: 0.5rem;
+      margin: 1rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      height: 1rem;
+    }
+    
+    
+    
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px; /*AQUI EU COLOQUEI PRA MAX ELE SE AJUSTOU AUTOMATICO, SEM DEU PRECISAR MEXER MUITO.*/
+        position: relative;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+
+
+
 
 }
 
@@ -2545,3 +2949,13 @@
     color: white;
     text-align: right;
 }
+
+
+
+
+
+/*_________________________ CALCULATOR ______________________________________*/
+
+
+
+
