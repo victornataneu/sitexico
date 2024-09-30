@@ -64,6 +64,34 @@
                 </div>
             </div>
         </div>
+
+        <div class="grid-calculadora">
+            <h1>Calcule seu Tamanho</h1>
+            <div class="size-calculator">
+                <h2>Calculadora de Tamanhos</h2>
+                <form id="sizeForm">
+                    <label for="height">Altura (cm):</label>
+                    <input type="number" id="height" name="height" required><br><br>
+            
+                    <label for="weight">Peso (kg):</label>
+                    <input type="number" id="weight" name="weight" required><br><br>
+            
+                    <label for="bust">Busto (cm):</label>
+                    <input type="number" id="bust" name="bust" required><br><br>
+            
+                    <label for="waist">Cintura (cm):</label>
+                    <input type="number" id="waist" name="waist" required><br><br>
+            
+                    <label for="hips">Quadril (cm):</label>
+                    <input type="number" id="hips" name="hips" required><br><br>
+            
+                    <button type="button" onclick="calculateSize()">Calcular Tamanho</button>
+                </form>
+                <div id="sizeResult"></div>
+            </div>
+        </div>
+
+
         <div class="main">
             <h2>Faça sua encomenda conosco</h2>
             <p>
@@ -227,6 +255,40 @@
         </div>
     </div>
     <button class="chatbox-toggle" onclick="toggleChat()">Chat</button>
+
+    
+
+
+    <script>
+        function calculateSize() {
+            // Captura as medidas do usuário
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            const bust = document.getElementById('bust').value;
+            const waist = document.getElementById('waist').value;
+            const hips = document.getElementById('hips').value;
+        
+            // Exemplo de lógica simples para sugerir tamanhos
+            let suggestedSize = '';
+        
+            // Lógica de exemplo: ajuste com base nas medidas de busto e quadril
+            if (bust <= 90 && waist <= 70 && hips <= 95) {
+                suggestedSize = 'P';
+            } else if (bust <= 100 && waist <= 80 && hips <= 105) {
+                suggestedSize = 'M';
+            } else if (bust <= 110 && waist <= 90 && hips <= 115) {
+                suggestedSize = 'G';
+            } else {
+                suggestedSize = 'GG';
+            }
+        
+            // Exibe o resultado
+            const resultDiv = document.getElementById('sizeResult');
+            resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
+        }
+    </script>
+        
+    
 
 
 </body>
