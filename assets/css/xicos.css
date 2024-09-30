@@ -1077,8 +1077,8 @@
 
     .search{
         grid-area: 'search';
-        margin-top: 2rem;
-        margin-left: .2rem;
+        margin-top: 3rem;
+        margin-left: 0.2rem;
         font-size: 1.1rem;
     }
 
@@ -1090,14 +1090,9 @@
 
 
     .btn-buscar{
-        display: flex;
         font-size: 1rem;
         background-color: black;
         color: white;
-    }
-
-    .search label{
-        display: flex;
     }
 
 
@@ -1105,7 +1100,6 @@
         cursor: pointer;
     }
 
-  
 
 }
 
@@ -1332,11 +1326,10 @@
 
   .search{
     grid-area: 'search';
-    margin-top: 2rem;
-    margin-left: .2rem;
+    margin-top: 3rem;
+    margin-left: 0.2rem;
     font-size: 1.1rem;
-}
-
+    }
 
     .search input{
         font-size: 0.7rem;
@@ -1345,16 +1338,12 @@
 
 
     .btn-buscar{
-        display: flex;
         font-size: 1rem;
         background-color: black;
         color: white;
     }
 
-    .search label{
-        display: flex;
-    }
-
+    
 
     .btn-buscar:hover{
         cursor: pointer;
@@ -1593,10 +1582,10 @@
 
   .search{
     grid-area: 'search';
-    margin-top: 2rem;
-    margin-left: .2rem;
+    margin-top: 3rem;
+    margin-left: 0.2rem;
     font-size: 1.1rem;
-}
+    }
 
 
     .search input{
@@ -1606,15 +1595,12 @@
 
 
     .btn-buscar{
-        display: flex;
         font-size: 1rem;
         background-color: black;
         color: white;
     }
 
-    .search label{
-        display: flex;
-    }
+    
 
 
     .btn-buscar:hover{
@@ -1851,11 +1837,10 @@
 
   .search{
     grid-area: 'search';
-    margin-top: 2rem;
-    margin-left: .2rem;
+    margin-top: 3rem;
+    margin-left: 0.2rem;
     font-size: 1.1rem;
-}
-
+    }
 
     .search input{
         font-size: 0.9rem;
@@ -1864,15 +1849,12 @@
 
 
     .btn-buscar{
-        display: flex;
         font-size: 1.2rem;
         background-color: black;
         color: white;
     }
 
-    .search label{
-        display: flex;
-    }
+    
 
 
     .btn-buscar:hover{
