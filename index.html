@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xicos Multimarcas</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
-    
 </head>
 <body>
     <section class="section-main">
@@ -37,6 +36,13 @@
                 <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Icone joias"></a></li>
             </ul>
         </nav>
+
+        <div class="search">
+            <label for="site-search">Buscar</label>
+            <input type="search" id="site-search" name="q" placeholder="Pesquise"/>
+            <button class="btn-buscar" onclick="buscarProduto()">Pesquisar</button>
+        </div>
+
         <div class="content-destaques">
             <div class="carousel">
                 <div class="carousel-track">
@@ -91,5 +97,14 @@
             
         </div>
     </footer>
+    <script>
+        function buscarProduto() {
+            const query = document.getElementById('site-search').value.toLowerCase();
+            if (query) {
+                // Redireciona para a página de resultados passando a busca como parâmetro
+                window.location.href = `indexcamisa.html?search=${query}`;
+            }
+        }
+    </script>
 </body>
 </html>
