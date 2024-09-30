@@ -117,14 +117,17 @@
             // Obtenha a URL da imagem a partir do elemento <img>
             const imagemProduto = produtoElement.querySelector('img').src;
 
-            // Agora, crie a mensagem para compartilhar no WhatsApp
+            // Crie a mensagem para compartilhar no WhatsApp
             const mensagem = `Confira este produto: ${nomeProduto} - ${imagemProduto}`;
-            
-            // Gera o link para o WhatsApp
-            const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(mensagem)}`;
-            
+
+            // Número do WhatsApp para enviar a mensagem (incluindo o código do país)
+            let phoneNumber = '5562994953404';
+
+            // Gera o link para enviar a mensagem diretamente para o número especificado no WhatsApp
+            let whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(mensagem)}`;
+
             // Abre o WhatsApp em uma nova janela
-            window.open(url, '_blank');
+            window.open(whatsappUrl, '_blank');
         }
 
         // Executar a função de filtragem ao carregar a página
