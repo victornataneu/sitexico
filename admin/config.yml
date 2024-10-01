@@ -1,16 +1,12 @@
 backend:
   name: git-gateway
-  branch: main  # ou master, dependendo do seu repositório
+  branch: main
   identity_url: "https://catalogoxicomultimarcas.netlify.app/.netlify/identity"  # Adicione a URL correta do seu site hospedado no Netlify
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
 
-# Incluindo a pasta img-destaques
-featured_media_folder: "assets/img-destaques"  # Caminho para imagens em destaque
-
 collections:
-  # Produtos em Destaque
   - name: "featured_products"
     label: "Produtos em Destaque"
     folder: "featured_products"
@@ -20,7 +16,6 @@ collections:
       - { label: "Imagem do Produto", name: "product_image", widget: "image" }
       - { label: "Descrição do Produto", name: "product_description", widget: "string" }
 
-  # Seção de Encomenda
   - name: "encomenda"
     label: "Seção de Encomenda"
     folder: "content/encomenda"
@@ -31,7 +26,6 @@ collections:
       - { label: "Link WhatsApp", name: "linkWhatsApp", widget: "string" }
       - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
 
-  # Regras de Entregas
   - name: "regras_entregas"
     label: "Regras de Entregas"
     folder: "content/regras_entregas"
@@ -40,7 +34,6 @@ collections:
       - { label: "Título", name: "tituloEntregas", widget: "string" }
       - { label: "Regras", name: "regrasEntregas", widget: "text" }
 
-  # Formas de Pagamento
   - name: "pagamentos"
     label: "Formas de Pagamento"
     folder: "content/pagamentos"
@@ -53,7 +46,6 @@ collections:
       - { label: "Ícone Pix", name: "iconePix", widget: "image" }
       - { label: "Informação Pix", name: "informacaoPix", widget: "text" }
 
-  # Contato
   - name: "contato"
     label: "Seção de Contato"
     folder: "content/contato"
