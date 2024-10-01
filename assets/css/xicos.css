@@ -342,7 +342,7 @@
     /* Estilo para o grid container */
     .grid-container {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Cria colunas automáticas com no mínimo 200px e distribuindo o restante do espaço */
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Cria colunas automáticas com no mínimo 200px e distribuindo o restante do espaço */
         gap: 1rem; /* Espaço entre as imagens */
         width: 100%;
     }
@@ -350,10 +350,11 @@
     /* Estilo para as imagens */
     .grid-container img {
         width: 100%; /* Faz a imagem ocupar toda a largura disponível */
-        height: auto; /* Mantém a proporção da imagem */
+        height: 261px; /* Mantém a proporção da imagem */ /*AQUI EU MEXI AS 08:40 DO DIA 01 TAVA HEIGTH:AUTO;*/
         object-fit: cover; /* Cobre o espaço da imagem sem distorcer */
         border-radius: 8px; /* Opcional: bordas arredondadas nas imagens */
         box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.1); /* Sombra sutil nas imagens */
+        
     }
 
   
@@ -458,75 +459,75 @@
       }
   
   
-      .grid-calculadora{
-          display: grid;
-          grid-area: calculadora;
-      }
+    .grid-calculadora{
+        display: grid;
+        grid-area: calculadora;
+    }
+    
+      
+    .grid-calculadora h1{
+    display: flex;
+    justify-content: center;
+    background-color: #000; /* Fundo preto */
+    align-items: center;
+    color: #fff; /* Texto branco */
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    height: 1rem;
+    }
       
       
-      .grid-calculadora h1{
-        display: flex;
-        justify-content: center;
-        background-color: #000; /* Fundo preto */
-        align-items: center;
-        color: #fff; /* Texto branco */
-        text-align: center;
-        padding: 2rem;
-        border-radius: 0.5rem;
-        margin: 1rem;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        font-size: 2rem;
+      
+    .size-calculator {
+        margin: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+        max-width: 300px;
+        position: relative;
+        left: 37%;
+        
+    }
+    
+    .size-calculator label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .size-calculator input {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .size-calculator button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .size-calculator button:hover {
+        background-color: #45a049;
+    }
+    
+    #sizeResult {
+        margin-top: 20px;
         font-weight: bold;
-        margin-bottom: 1rem;
-        height: 1rem;
-      }
-      
-      
-      
-      .size-calculator {
-          margin: 20px;
-          padding: 10px;
-          border: 1px solid #ddd;
-          background-color: #f9f9f9;
-          max-width: 300px;
-          position: relative;
-          left: 37%;
-          
-      }
-      
-      .size-calculator label {
-          display: block;
-          margin-bottom: 5px;
-      }
-      
-      .size-calculator input {
-          width: 100%;
-          padding: 5px;
-          margin-bottom: 10px;
-      }
-      
-      .size-calculator button {
-          background-color: #4CAF50;
-          color: white;
-          padding: 10px 20px;
-          border: none;
-          cursor: pointer;
-      }
-      
-      .size-calculator button:hover {
-          background-color: #45a049;
-      }
-      
-      #sizeResult {
-          margin-top: 20px;
-          font-weight: bold;
-      }
+    }
       
   
   
   
     
-  }
+}
   
   
   
