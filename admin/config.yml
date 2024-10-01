@@ -1,13 +1,13 @@
 backend:
   name: git-gateway
   branch: main  # ou master, dependendo do seu repositório
+  identity_url: "https://catalogoxicomultimarcas.netlify.app/.netlify/identity"  # Adicione a URL correta do seu site hospedado no Netlify
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
 
 # Incluindo a pasta img-destaques
 featured_media_folder: "assets/img-destaques"  # Caminho para imagens em destaque
-
 
 collections:
   # Produtos em Destaque
