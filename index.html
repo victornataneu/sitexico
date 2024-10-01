@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -6,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
+    <!-- Carregando o widget do Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W84TCCE51E"></script>
 <script>
@@ -61,7 +63,6 @@
                 {% endfor %}
             </div>
         </div>
-        
 
         <div class="grid-calculadora">
             <h1>Calcule seu Tamanho</h1>
@@ -89,7 +90,6 @@
             </div>
         </div>
 
-
         <div class="main">
             <h2>{{tituloEncomenda}}</h2>
             <p>
@@ -108,10 +108,9 @@
                 <p>{{informacaoPix}}</p>
             </div>
         </div>
-        
-        
-        </div>
+
     </section>
+
     <footer class="rodape">
         <h1>{{tituloFaleConosco}}</h1>
         <div class="redes-sociais-e-contatos">
@@ -129,144 +128,41 @@
             </p>
         </div>
     </footer>
-    
+
+    <!-- Script para buscar produtos -->
     <script>
         function buscarProduto() {
             const query = document.getElementById('site-search').value.toLowerCase();
             if (query) {
-                // Redireciona para a página de resultados passando a busca como parâmetro
                 window.location.href = `indexcamisa.html?search=${query}`;
             }
         }
-
-        function toggleChat() {
-        const chatbox = document.querySelector('.chatbox-container');
-        chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
-        }
-
-
-
-        let step = 0;  // Variável para controlar o estado da conversa
-
-        function toggleChat() {
-            const chatbox = document.querySelector('.chatbox-container');
-            chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
-        }
-
-        function sendMessage() {
-            const input = document.getElementById('chatboxInput');
-            const message = input.value.trim();
-
-            if (message) {
-                const chatboxBody = document.getElementById('chatboxBody');
-
-                // Adiciona a mensagem do usuário
-                const userMessageDiv = document.createElement('div');
-                userMessageDiv.classList.add('chat-message', 'user-message');
-                userMessageDiv.textContent = message;
-                chatboxBody.appendChild(userMessageDiv);
-
-                // Verifica o estado da conversa e responde dinamicamente
-                setTimeout(() => {
-                    botResponse(message);
-                    chatboxBody.scrollTop = chatboxBody.scrollHeight;
-                }, 500);  // Simula um pequeno atraso de resposta do bot
-
-                // Limpa o campo de entrada
-                input.value = '';
-            }
-        }
-
-        function botResponse(userMessage) {
-            const chatboxBody = document.getElementById('chatboxBody');
-            const botMessageDiv = document.createElement('div');
-            botMessageDiv.classList.add('chat-message', 'bot-message');
-
-            if (step === 0) {
-                // Menu inicial de opções
-                botMessageDiv.innerHTML = `
-                    Escolha uma das opções abaixo:<br>
-                    1 - Informações sobre produtos<br>
-                    2 - Promoções<br>
-                    3 - Regras de entrega<br>
-                    4 - Formas de pagamento<br>
-                    5 - Encomendar produto<br>
-                    6 - Fale conosco
-                `;
-                step = 1;  // Avança para a próxima etapa
-            } else if (step === 1) {
-                // Responde de acordo com a escolha do cliente
-                switch (userMessage) {
-                    case '1':
-                        botMessageDiv.textContent = "Você escolheu 'Informações sobre produtos'. Nossos produtos incluem camisetas, bermudas, calças, bonés e muito mais. Faça uma busca no campo 'Buscar'. Caso não encontre o que procura, fale conosco digitando 6.";
-                        break;
-                    case '2':
-                        botMessageDiv.textContent = "Você escolheu 'Promoções'. Atualmente, temos descontos especiais em Pix e até 6x sem juros nos cartões! Confira também no ícone de promoções na página inicial. Tenho certeza que algo vai te agradar!";
-                        break;
-                    case '3':
-                        botMessageDiv.textContent = "Você escolheu 'Regras de entrega'. Entregas em Jaraguá-GO para compras acima de R$ 100 são isentas de taxa de frete. Para compras menores, há uma taxa de R$ 5. Ainda em dúvida? Digite 6 e fale com um de nossos atendentes.";
-                        break;
-                    case '4':
-                        botMessageDiv.textContent = "Você escolheu 'Formas de pagamento'. Aceitamos Visa, Mastercard, e Pix com 10% de desconto.";
-                        break;
-                    case '5':
-                        botMessageDiv.innerHTML = `Você escolheu 'Encomendar produto'. Não achou o que procurava? Vamos te ajudar! 
-                        <a href="https://wa.me/5562994953404" target="_blank">
-                            <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp"> Clique aqui para nos contatar no WhatsApp.
-                        </a>`;
-                        break;
-                    case '6':
-                    botMessageDiv.innerHTML = `Você escolheu 'Fale conosco'. Envie uma mensagem no WhatsApp para que possamos ajudar você diretamente! 
-                        <a href="https://wa.me/5562994953404" target="_blank">
-                            <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp"> Clique aqui para nos contatar no WhatsApp.
-                        </a>`;
-                        break;
-                    default:
-                        botMessageDiv.textContent = "Opção inválida. Por favor, escolha uma das opções: 1, 2, 3, 4, 5 ou 6.";
-                        step = 1;  // Mantém no mesmo passo até escolher corretamente
-                        break;
-                }
-            }
-
-            chatboxBody.appendChild(botMessageDiv);
-            chatboxBody.scrollTop = chatboxBody.scrollHeight;  // Faz o scroll até o final
-        }
-
     </script>
 
-    <div class="chatbox-container">
-        <div class="chatbox-header">
-            <h3>Chat com Xicos Multimarcas</h3>
-            <button class="close-chat" onclick="toggleChat()">X</button>
-        </div>
-        <div class="chatbox-body" id="chatboxBody">
-            <div class="chat-message bot-message">
-                Olá! Eu sou o Xiquinho! No que posso te ajudar? Resuma sua dúvida em uma palavra!
-            </div>
-        </div>
-        <div class="chatbox-footer">
-            <input type="text" id="chatboxInput" placeholder="Digite sua mensagem..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
-            <button onclick="sendMessage()">Enviar</button>
-        </div>
-    </div>
-    <button class="chatbox-toggle" onclick="toggleChat()">Chat</button>
+    <!-- Script para exibir modal de login Netlify Identity -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
 
-    
-
-
+    <!-- Função para calcular o tamanho baseado nas medidas -->
     <script>
         function calculateSize() {
-            // Captura as medidas do usuário
             const height = document.getElementById('height').value;
             const weight = document.getElementById('weight').value;
             const bust = document.getElementById('bust').value;
             const waist = document.getElementById('waist').value;
             const hips = document.getElementById('hips').value;
-        
-            // Exemplo de lógica simples para sugerir tamanhos
+
             let suggestedSize = '';
-        
-            // Lógica de exemplo: ajuste com base nas medidas de busto e quadril
+
             if (bust <= 90 && waist <= 70 && hips <= 95) {
                 suggestedSize = 'P';
             } else if (bust <= 100 && waist <= 80 && hips <= 105) {
@@ -276,15 +172,10 @@
             } else {
                 suggestedSize = 'GG';
             }
-        
-            // Exibe o resultado
+
             const resultDiv = document.getElementById('sizeResult');
             resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
         }
     </script>
-        
-    
-
-
 </body>
 </html>
