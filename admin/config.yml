@@ -1,48 +1,66 @@
-# Configurações do CMS
-media_folder: "assets/img"  # Caminho onde as imagens serão armazenadas
-public_folder: "/assets/img"  # Caminho público para as imagens
+backend:
+  name: git-gateway
+  branch: main  # ou master, dependendo do seu repositório
+
+media_folder: "assets/img"
+public_folder: "/assets/img"
 
 # Incluindo a pasta img-destaques
 featured_media_folder: "assets/img-destaques"  # Caminho para imagens em destaque
 
-# Configurações Gerais
-title: "Título do Seu Site"
-logo: "/assets/img/logo.png"  # Caminho da logo da empresa
-promotion: "/assets/img/promocao.png"  # Caminho da imagem de promoção
-
-# Produtos em Destaque
 collections:
+  # Produtos em Destaque
   - name: "featured_products"
     label: "Produtos em Destaque"
-    folder: "featured_products"  # Pasta onde os arquivos de produtos são armazenados
+    folder: "featured_products"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "Imagem do Produto", name: "product_image", widget: "image" }
       - { label: "Descrição do Produto", name: "product_description", widget: "string" }
 
-# Seção de Encomenda
-tituloEncomenda: "Faça sua encomenda conosco"
-textoEncomenda: "Não achou o que procurava? Não se preocupe! Fale conosco que vamos atrás do que precisa."
-linkWhatsApp: "https://wa.me/5562994953404"  # Link para o WhatsApp
-iconeWhatsApp: "/assets/img/icons8-whatsapp.svg"  # Caminho do ícone do WhatsApp
+  # Seção de Encomenda
+  - name: "encomenda"
+    label: "Seção de Encomenda"
+    folder: "content/encomenda"
+    create: false
+    fields:
+      - { label: "Título", name: "tituloEncomenda", widget: "string" }
+      - { label: "Texto", name: "textoEncomenda", widget: "text" }
+      - { label: "Link WhatsApp", name: "linkWhatsApp", widget: "string" }
+      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
 
-# Regras de Entregas
-tituloEntregas: "Regras de Entregas"
-regrasEntregas: "Nossa entrega é feita em toda a cidade de Jaraguá-GO para compras acima de R$ 100. Para compras menores, será cobrada uma taxa de R$ 5!"
+  # Regras de Entregas
+  - name: "regras_entregas"
+    label: "Regras de Entregas"
+    folder: "content/regras_entregas"
+    create: false
+    fields:
+      - { label: "Título", name: "tituloEntregas", widget: "string" }
+      - { label: "Regras", name: "regrasEntregas", widget: "text" }
 
-# Formas de Pagamento
-tituloPagamentos: "Formas de Pagamento"
-iconeVisa: "/assets/img/visa.png"  # Caminho do ícone Visa
-iconeCartao: "/assets/img/card.png"  # Caminho do ícone de cartão
-informacaoPagamento: "Dividimos em até 6x nos cartões"
-iconePix: "/assets/img/icons8-pix-48.png"  # Caminho do ícone Pix
-informacaoPix: "No Pix desconto de até 10%"
+  # Formas de Pagamento
+  - name: "pagamentos"
+    label: "Formas de Pagamento"
+    folder: "content/pagamentos"
+    create: false
+    fields:
+      - { label: "Título", name: "tituloPagamentos", widget: "string" }
+      - { label: "Ícone Visa", name: "iconeVisa", widget: "image" }
+      - { label: "Ícone Cartão", name: "iconeCartao", widget: "image" }
+      - { label: "Informação Cartão", name: "informacaoPagamento", widget: "text" }
+      - { label: "Ícone Pix", name: "iconePix", widget: "image" }
+      - { label: "Informação Pix", name: "informacaoPix", widget: "text" }
 
-# Seção de Contato
-tituloFaleConosco: "Fale Conosco"
-linkInstagram: "https://www.instagram.com/xico__multimarcas"  # Link do Instagram
-iconeInstagram: "/assets/img/icons8-instagram.svg"  # Caminho do ícone Instagram
-linkEndereco: "https://www.google.com.br/maps/place/Xico+Multimarcas"  # Link do Google Maps
-iconeEndereco: "/assets/img/addresswhite.png"  # Caminho do ícone de endereço
-endereco: "R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000"
+  # Contato
+  - name: "contato"
+    label: "Seção de Contato"
+    folder: "content/contato"
+    create: false
+    fields:
+      - { label: "Título", name: "tituloFaleConosco", widget: "string" }
+      - { label: "Link Instagram", name: "linkInstagram", widget: "string" }
+      - { label: "Ícone Instagram", name: "iconeInstagram", widget: "image" }
+      - { label: "Link Endereço", name: "linkEndereco", widget: "string" }
+      - { label: "Ícone Endereço", name: "iconeEndereco", widget: "image" }
+      - { label: "Endereço", name: "endereco", widget: "text" }
