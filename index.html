@@ -55,8 +55,8 @@
             <button class="btn-buscar" onclick="buscarProduto()">Pesquisar</button>
         </div>
 
-         <!-- Produtos em Destaque -->
-         <div class="content-destaques">
+        <!-- Produtos em Destaque -->
+        <div class="content-destaques">
             <div class="grid-container">
                 {% for product in featured_products %}
                     <img src="{{ product.product_image }}" alt="{{ product.product_description }}">
@@ -108,7 +108,6 @@
                 <p>{{informacaoPix}}</p>
             </div>
         </div>
-
     </section>
 
     <footer class="rodape">
@@ -176,6 +175,13 @@
             const resultDiv = document.getElementById('sizeResult');
             resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
         }
+    </script>
+
+    <!-- Script do Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms-app"></script>
+    <script>
+        // Inicializando o Netlify CMS
+        netlifyCms.init();
     </script>
 </body>
 </html>
