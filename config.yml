@@ -1,24 +1,25 @@
-
 # Configurações do CMS
 media_folder: "assets/img"  # Caminho onde as imagens serão armazenadas
 public_folder: "/assets/img"  # Caminho público para as imagens
 
 # Incluindo a pasta img-destaques
-featured_media_folder: "assets/img/img-destaques"  # Caminho para imagens em destaque
-
-# Produtos em Destaque
-featured_products:
-  - product_image: "/assets/img/produto1.png"
-    product_description: "Descrição do Produto 1"
-  - product_image: "/assets/img/produto2.png"
-    product_description: "Descrição do Produto 2"
-  - product_image: "/assets/img/produto3.png"
-    product_description: "Descrição do Produto 3"
+featured_media_folder: "assets/img-destaques"  # Caminho para imagens em destaque
 
 # Configurações Gerais
 title: "Título do Seu Site"
 logo: "/assets/img/logo.png"  # Caminho da logo da empresa
 promotion: "/assets/img/promocao.png"  # Caminho da imagem de promoção
+
+# Produtos em Destaque
+collections:
+  - name: "featured_products"
+    label: "Produtos em Destaque"
+    folder: "featured_products"  # Pasta onde os arquivos de produtos são armazenados
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Imagem do Produto", name: "product_image", widget: "image" }
+      - { label: "Descrição do Produto", name: "product_description", widget: "string" }
 
 # Seção de Encomenda
 tituloEncomenda: "Faça sua encomenda conosco"
@@ -45,5 +46,3 @@ iconeInstagram: "/assets/img/icons8-instagram.svg"  # Caminho do ícone Instagra
 linkEndereco: "https://www.google.com.br/maps/place/Xico+Multimarcas"  # Link do Google Maps
 iconeEndereco: "/assets/img/addresswhite.png"  # Caminho do ícone de endereço
 endereco: "R. Creso Gomes, 85 - Qd19 Lt28 - Vila Sao Jose, Jaraguá - GO, 76330-000"
-
-
