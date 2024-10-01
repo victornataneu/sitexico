@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content Manager</title>
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <!-- Incluindo o Netlify Identity -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Manager</title>
+    <!-- Incluindo o Netlify CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.15.72/dist/netlify-cms.js"></script>
+    <!-- Incluindo o Netlify Identity -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <!-- Contêiner onde o CMS será montado -->
-  <div id="cms"></div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      // Inicializando o Netlify CMS
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/"; // Redireciona após o login
+    <div id="cms"></div>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
             });
-          } else {
-            // Se o usuário já estiver logado, monta o CMS
-            window.netlifyIdentity.on("login", () => {
-              document.location.reload();
-            });
-          }
-        });
-      }
-
-      // Montando o Netlify CMS no contêiner
-      CMS.init();
-    });
-  </script>
+        }
+    </script>
 </body>
 </html>
