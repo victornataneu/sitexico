@@ -17,7 +17,6 @@
     // Verifica se a identidade do Netlify está disponível
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
-        // Se não houver usuário logado, abre o modal de login
         if (!user) {
           window.netlifyIdentity.on("login", () => {
             document.location.href = "/admin/"; // Redireciona após o login
@@ -25,9 +24,6 @@
         }
       });
     }
-
-    // Inicializa o Netlify CMS
-    NetlifyCms.init();
   </script>
 
 </body>
