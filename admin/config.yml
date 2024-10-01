@@ -5,8 +5,6 @@ backend:
 media_folder: "assets/img"
 public_folder: "/assets/img"
 
-# Incluindo a pasta img-destaques
-featured_media_folder: "assets/img-destaques"  # Caminho para imagens em destaque
 
 collections:
   # Produtos em Destaque
