@@ -1,143 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
-    <link rel="stylesheet" href="/assets/css/xicos.css">
-    <!-- Carregando o widget do Netlify Identity -->
+    <title>Content Manager</title>
+    <!-- Incluindo uma versão do Netlify CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+    <!-- Incluindo o Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
-
 <body>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W84TCCE51E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-W84TCCE51E');
-    </script>
-
-    <section class="section-main">
-        <header class="logo">
-            <img class="imglogo-01" src="{{ logo }}" alt="Logo da empresa">
-            <div class="main-img">
-                <h1>
-                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> Enviamos para todo o Brasil!
-                </h1>
-                <h1>
-                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> Faça sua encomenda!
-                </h1>
-            </div>
-            <div class="promocao">
-                <a href="#" target="_blank"><img src="{{ promotion }}" alt="botao de promoção"></a>
-                <a class="linkpromocao" href="#" target="_blank">Promoções</a>
-            </div>
-        </header>
-
-        <nav class="nav">
-            <ul>
-                <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Icone camisa"></a></li>
-                <li><a href="#"><img src="/assets/img/bermudaicon.png" alt="Icone bermuda"></a></li>
-                <li><a href="#"><img src="/assets/img/calcaicon.png" alt="Icone calça"></a></li>
-                <li><a href="#"><img src="/assets/img/boneicon.png" alt="Icone boné"></a></li>
-                <li><a href="#"><img src="/assets/img/sapatoicon (2).png" alt="Icone sapato"></a></li>
-                <li><a href="#"><img src="/assets/img/cuecaicon.png" alt="Icone cueca"></a></li>
-                <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Icone joias"></a></li>
-            </ul>
-        </nav>
-
-        <div class="search">
-            <label for="site-search">Buscar</label>
-            <input type="search" id="site-search" name="q" placeholder="Pesquise"/>
-            <button class="btn-buscar" onclick="buscarProduto()">Pesquisar</button>
-        </div>
-
-        <!-- Produtos em Destaque -->
-        <div class="content-destaques">
-            <div class="grid-container">
-                {% for product in featured_products %}
-                    <img src="{{ product.product_image }}" alt="{{ product.product_description }}">
-                {% endfor %}
-            </div>
-        </div>
-
-        <div class="grid-calculadora">
-            <h1>Calcule seu Tamanho</h1>
-            <div class="size-calculator">
-                <h2>Calculadora de Tamanhos</h2>
-                <form id="sizeForm">
-                    <label for="height">Altura (cm):</label>
-                    <input type="number" id="height" name="height" required><br><br>
-
-                    <label for="weight">Peso (kg):</label>
-                    <input type="number" id="weight" name="weight" required><br><br>
-
-                    <label for="bust">Busto (cm):</label>
-                    <input type="number" id="bust" name="bust" required><br><br>
-
-                    <label for="waist">Cintura (cm):</label>
-                    <input type="number" id="waist" name="waist" required><br><br>
-
-                    <label for="hips">Quadril (cm):</label>
-                    <input type="number" id="hips" name="hips" required><br><br>
-
-                    <button type="button" onclick="calculateSize()">Calcular Tamanho</button>
-                </form>
-                <div id="sizeResult"></div>
-            </div>
-        </div>
-
-        <div class="main">
-            <h2>{{tituloEncomenda}}</h2>
-            <p>
-                {{textoEncomenda}} <a href="{{linkWhatsApp}}" target="_blank"><img src="{{iconeWhatsApp}}" alt="WhatsApp">(Clique aqui).</a>
-            </p>
-            <h2>{{tituloEntregas}}</h2>
-            <p class="entregas">
-                <h3>{{regrasEntregas}}</h3><br>
-            </p>
-            <h2>{{tituloPagamentos}}</h2>
-            <div class="formapagamento">
-                <img src="{{iconeVisa}}" width="46px" height="46px" alt="Visa">
-                <img src="{{iconeCartao}}" width="46px" height="46px" alt="Cartão">
-                <p>{{informacaoPagamento}}</p>
-                <img class="pix" src="{{iconePix}}" width="46px" height="46px" alt="Pix">
-                <p>{{informacaoPix}}</p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="rodape">
-        <h1>{{tituloFaleConosco}}</h1>
-        <div class="redes-sociais-e-contatos">
-            <a href="{{linkInstagram}}" target="_blank">
-                <img src="{{iconeInstagram}}" alt="Instagram">
-            </a>
-            <a href="{{linkWhatsApp}}" target="_blank">
-                <img src="{{iconeWhatsApp}}" alt="WhatsApp">
-            </a>
-            <p>
-                <a href="{{linkEndereco}}" target="_blank">
-                    <img src="{{iconeEndereco}}" alt="Endereço">
-                </a>
-                <span class="ende">{{endereco}}</span>
-            </p>
-        </div>
-    </footer>
-
-    <!-- Script para buscar produtos -->
-    <script>
-        function buscarProduto() {
-            const query = document.getElementById('site-search').value.toLowerCase();
-            if (query) {
-                window.location.href = `indexcamisa.html?search=${query}`;
-            }
-        }
-    </script>
-
-    <!-- Script para exibir modal de login Netlify Identity -->
+    <div id="cms"></div>
     <script>
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
@@ -148,39 +21,6 @@
                 }
             });
         }
-    </script>
-
-    <!-- Função para calcular o tamanho baseado nas medidas -->
-    <script>
-        function calculateSize() {
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-            const bust = document.getElementById('bust').value;
-            const waist = document.getElementById('waist').value;
-            const hips = document.getElementById('hips').value;
-
-            let suggestedSize = '';
-
-            if (bust <= 90 && waist <= 70 && hips <= 95) {
-                suggestedSize = 'P';
-            } else if (bust <= 100 && waist <= 80 && hips <= 105) {
-                suggestedSize = 'M';
-            } else if (bust <= 110 && waist <= 90 && hips <= 115) {
-                suggestedSize = 'G';
-            } else {
-                suggestedSize = 'GG';
-            }
-
-            const resultDiv = document.getElementById('sizeResult');
-            resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
-        }
-    </script>
-
-    <!-- Script do Netlify CMS -->
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/netlify-cms.js"></script>
-    <script>
-        // Inicializando o Netlify CMS
-        netlifyCms.init();
     </script>
 </body>
 </html>
