@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Content Manager</title>
   <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <script src="https://unpkg.com/netlify-cms@2.10.173/dist/netlify-cms.js"></script>
+
+  <h1>Content Manager</h1>
+  <div id="cms"></div>
+
   <script>
+    // Verifica se a identidade do Netlify está disponível
     if (window.netlifyIdentity) {
       window.netlifyIdentity.on("init", user => {
+        // Se não houver usuário logado, abre o modal de login
         if (!user) {
           window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
+            document.location.href = "/admin/"; // Redireciona após o login
           });
         }
       });
     }
   </script>
+
 </body>
 </html>
