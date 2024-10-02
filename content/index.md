@@ -26,3 +26,4 @@ featured_products:
   - product_image: "/assets/img/produto2.png"
     product_description: "Produto 2"
 ---
+ 
