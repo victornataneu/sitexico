@@ -1,7 +1,0 @@
-baseURL = "https://catalogoxicomultimarcas.netlify.app/"
-languageCode = "pt-br"
-title = "xicos"
-theme = "nome-do-tema"
-
-[params]
-  description = "Descrição do seu site"
