@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Manager</title>
     <script src="https://unpkg.com/netlify-cms@2.15.0/dist/netlify-cms.js"></script>
-
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -19,7 +18,7 @@
                     const token = user.token; // Obtém o token de autenticação
                     console.log("Token: ", token); // Verifica o token
                     // Inicializa o Netlify CMS
-                    NetlifyCms.init(); // Use 'NetlifyCms' ao invés de 'netlifyCMS'
+                    CMS.init(); // Correção aqui
                 } else {
                     // Se não houver usuário, redireciona para o login
                     window.netlifyIdentity.on("login", () => {
