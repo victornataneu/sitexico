@@ -1,10 +1,3 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "assets/uploads" # Caminho para salvar as mídias
-public_folder: "/assets/uploads"
-
 collections:
   - name: "produtos"
     label: "Produtos"
@@ -35,7 +28,7 @@ collections:
       - { label: "Título do Site", name: "title", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
       - { label: "Link do WhatsApp", name: "linkWhatsApp", widget: "string" }
-      - { label: "Promoção", name: "promotion", widget: "image" }
+      - { label: "Promoção", name: "promotion_image_site", widget: "image" } # Nome alterado aqui
       - { label: "Título Encomenda", name: "tituloEncomenda", widget: "string" }
       - { label: "Texto Encomenda", name: "textoEncomenda", widget: "text" }
       - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
