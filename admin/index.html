@@ -13,20 +13,20 @@
         // Inicializa o Netlify Identity
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
+                console.log(user); // Verifica se o usuário está autenticado
+                if (user) {
+                    const token = user.token; // Obtém o token de autenticação
+                    console.log("Token: ", token); // Verifica o token
+                    // Inicializa o Netlify CMS
+                    NetlifyCms.init(); // Use 'NetlifyCms' ao invés de 'netlifyCMS'
                 } else {
-                    netlifyIdentity.on("logout", () => {
+                    // Se não houver usuário, redireciona para o login
+                    window.netlifyIdentity.on("login", () => {
                         document.location.href = "/admin/";
                     });
                 }
             });
         }
-
-        // Inicializa o Netlify CMS
-        NetlifyCms.init(); // use 'NetlifyCms' ao invés de 'netlifyCMS'
     </script>
 </body>
 </html>
