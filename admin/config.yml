@@ -9,7 +9,7 @@ public_folder: "/assets/img"
 collections:
   - name: "featured_products"
     label: "Produtos em Destaque"
-    folder: "featured_products"
+    folder: "content/featured_products"
     create: true
     slug: "{{slug}}"
     fields:
