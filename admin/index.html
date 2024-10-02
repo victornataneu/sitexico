@@ -2,36 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Content Manager</title>
-    <!-- Inclui o script do Netlify Identity -->
+    <!-- Carregar o widget do Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <!-- Inclui o script do Netlify CMS -->
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.js"></script>
+    <!-- Carregar o Netlify CMS com defer -->
+    <script defer src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/netlify-cms.js"></script>
 </head>
 <body>
-    <div id="cms"></div>
-    <!-- Scripts devem ser carregados após o body -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Inicializa o Netlify Identity
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                    if (user) {
-                        // Se o usuário estiver logado, inicializa o CMS
-                        CMS.init();
-                    } else {
-                        // Redireciona para a página de login
-                        window.netlifyIdentity.on("login", () => {
-                            document.location.href = "/admin/";
-                        });
-                    }
-                });
-            }
-
-            // Inicializa o CMS após o carregamento do Netlify Identity
-            window.netlifyIdentity.init();
-        });
-    </script>
+    <!-- O Netlify CMS irá substituir o conteúdo do body -->
 </body>
 </html>
