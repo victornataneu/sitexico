@@ -179,8 +179,10 @@
     <!-- Script do Netlify CMS -->
     <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/netlify-cms.js"></script>
     <script>
-        // Inicializando o Netlify CMS
-        netlifyCms.init();
+        document.addEventListener("DOMContentLoaded", function() {
+            // Inicializando o Netlify CMS
+            netlifyCms.init();
+        });
     </script>
 </body>
 </html>
