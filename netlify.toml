@@ -1,2 +1,3 @@
 [build]
-publish = "public"  # ou "dist" dependendo do seu processo de build
+publish = "dist"  # ou o diretório que seu build gera
+command = "npm run build"  # ajuste conforme o comando que você usa para build
