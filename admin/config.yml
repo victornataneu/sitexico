@@ -5,9 +5,6 @@ backend:
 media_folder: "assets/uploads" # Caminho para salvar as mídias
 public_folder: "/assets/uploads"
 
-media_library:
-  name:  "/assets/img" # Ou qualquer biblioteca de mídia que você estiver usando
-
 collections:
   - name: "produtos"
     label: "Produtos"
@@ -38,7 +35,7 @@ collections:
       - { label: "Título do Site", name: "title", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
       - { label: "Link do WhatsApp", name: "linkWhatsApp", widget: "string" }
-      - { label: "Promoção", name: "promotion_image_site", widget: "image" } # Nome alterado
+      - { label: "Promoção", name: "promotion", widget: "image" }
       - { label: "Título Encomenda", name: "tituloEncomenda", widget: "string" }
       - { label: "Texto Encomenda", name: "textoEncomenda", widget: "text" }
       - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
@@ -53,8 +50,6 @@ collections:
       - { label: "Título Fale Conosco", name: "tituloFaleConosco", widget: "string" }
       - { label: "Link Instagram", name: "linkInstagram", widget: "string" }
       - { label: "Ícone Instagram", name: "iconeInstagram", widget: "image" }
-      - { label: "Link WhatsApp", name: "linkWhatsApp", widget: "string" }
-      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
       - { label: "Link Endereço", name: "linkEndereco", widget: "string" }
       - { label: "Ícone Endereço", name: "iconeEndereco", widget: "image" }
       - { label: "Endereço", name: "endereco", widget: "text" }
