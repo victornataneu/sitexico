@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: main
-  identity_url: "https://catalogoxicomultimarcas.netlify.app/"  # Adicione a URL correta do seu site hospedado no Netlify
+  identity_url: "https://catalogoxicomultimarcas.netlify.app/.netlify/identity"
 
 media_folder: "assets/img"
 public_folder: "/assets/img"
