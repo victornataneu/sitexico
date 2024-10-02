@@ -4,9 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Manager</title>
-    <!-- Incluindo o Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js"></script>
-    <!-- Incluindo o Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
@@ -19,12 +17,16 @@
                     window.netlifyIdentity.on("login", () => {
                         document.location.href = "/admin/";
                     });
+                } else {
+                    netlifyIdentity.on("logout", () => {
+                        document.location.href = "/admin/";
+                    });
                 }
             });
         }
 
         // Inicializa o Netlify CMS
-        netlifyCMS.init();
+        NetlifyCms.init(); // use 'NetlifyCms' ao invés de 'netlifyCMS'
     </script>
 </body>
 </html>
