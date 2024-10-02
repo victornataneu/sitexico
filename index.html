@@ -6,7 +6,7 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
     <!-- Carregando o widget do Netlify Identity -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 </head>
 
 <body>
@@ -178,11 +178,5 @@
 
     <!-- Script do Netlify CMS -->
     <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/netlify-cms.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Inicializando o Netlify CMS
-            netlifyCms.init();
-        });
-    </script>
 </body>
 </html>
