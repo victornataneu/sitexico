@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/img-destaques"
+public_folder: "/assets/img-destaques"
+
+media_library:
+  name: uploadcare
+
+collections:
+  - name: "produtos"
+    label: "Produtos"
+    folder: "content/produtos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título do Produto", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
+      - { label: "Imagem do Produto", name: "product_image", widget: "image" }
+      - { label: "Preço", name: "price", widget: "number" }
+
+  - name: "promocoes"
+    label: "Promoções"
+    folder: "content/promocoes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Promoção", name: "promotion", widget: "string" }
+      - { label: "Imagem da Promoção", name: "promotion_image", widget: "image" }
+
+  - name: "configuracoes"
+    label: "Configurações do Site"
+    folder: "content/configuracoes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título do Site", name: "title", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Link do WhatsApp", name: "linkWhatsApp", widget: "string" }
+      - { label: "Promoção", name: "promotion", widget: "image" }
+      - { label: "Título Encomenda", name: "tituloEncomenda", widget: "string" }
+      - { label: "Texto Encomenda", name: "textoEncomenda", widget: "text" }
+      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
+      - { label: "Título Entregas", name: "tituloEntregas", widget: "string" }
+      - { label: "Regras de Entregas", name: "regrasEntregas", widget: "text" }
+      - { label: "Título Pagamentos", name: "tituloPagamentos", widget: "string" }
+      - { label: "Ícone Visa", name: "iconeVisa", widget: "image" }
+      - { label: "Ícone Cartão", name: "iconeCartao", widget: "image" }
+      - { label: "Informações de Pagamento", name: "informacaoPagamento", widget: "text" }
+      - { label: "Ícone Pix", name: "iconePix", widget: "image" }
+      - { label: "Informações Pix", name: "informacaoPix", widget: "text" }
+      - { label: "Título Fale Conosco", name: "tituloFaleConosco", widget: "string" }
+      - { label: "Link Instagram", name: "linkInstagram", widget: "string" }
+      - { label: "Ícone Instagram", name: "iconeInstagram", widget: "image" }
+      - { label: "Link WhatsApp", name: "linkWhatsApp", widget: "string" }
+      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
+      - { label: "Link Endereço", name: "linkEndereco", widget: "string" }
+      - { label: "Ícone Endereço", name: "iconeEndereco", widget: "image" }
+      - { label: "Endereço", name: "endereco", widget: "text" }
