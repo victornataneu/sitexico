@@ -7,9 +7,6 @@
     <link rel="stylesheet" href="/assets/css/xicos.css">
     <!-- Carregando o widget do Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-
-<body>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W84TCCE51E"></script>
     <script>
@@ -18,33 +15,35 @@
       gtag('js', new Date());
       gtag('config', 'G-W84TCCE51E');
     </script>
+</head>
 
+<body>
     <section class="section-main">
         <header class="logo">
             <img class="imglogo-01" src="{{ logo }}" alt="Logo da empresa">
             <div class="main-img">
                 <h1>
-                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Icone de caixa"> Enviamos para todo o Brasil!
+                    <img class="img-02" src="/assets/img/icons8-box.svg" alt="Ícone de caixa"> Enviamos para todo o Brasil!
                 </h1>
                 <h1>
-                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Icone do WhatsApp"> Faça sua encomenda!
+                    <img class="img-02" src="/assets/img/icons8-whatsapp.svg" alt="Ícone do WhatsApp"> Faça sua encomenda!
                 </h1>
             </div>
             <div class="promocao">
-                <a href="#" target="_blank"><img src="{{ promotion }}" alt="botao de promoção"></a>
+                <a href="#" target="_blank"><img src="{{ promotion }}" alt="Botão de promoção"></a>
                 <a class="linkpromocao" href="#" target="_blank">Promoções</a>
             </div>
         </header>
 
         <nav class="nav">
             <ul>
-                <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Icone camisa"></a></li>
-                <li><a href="#"><img src="/assets/img/bermudaicon.png" alt="Icone bermuda"></a></li>
-                <li><a href="#"><img src="/assets/img/calcaicon.png" alt="Icone calça"></a></li>
-                <li><a href="#"><img src="/assets/img/boneicon.png" alt="Icone boné"></a></li>
-                <li><a href="#"><img src="/assets/img/sapatoicon (2).png" alt="Icone sapato"></a></li>
-                <li><a href="#"><img src="/assets/img/cuecaicon.png" alt="Icone cueca"></a></li>
-                <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Icone joias"></a></li>
+                <li><a href="/indexcamisa.html" target="_blank"><img src="/assets/img/camisaicon.png" alt="Ícone camisa"></a></li>
+                <li><a href="#"><img src="/assets/img/bermudaicon.png" alt="Ícone bermuda"></a></li>
+                <li><a href="#"><img src="/assets/img/calcaicon.png" alt="Ícone calça"></a></li>
+                <li><a href="#"><img src="/assets/img/boneicon.png" alt="Ícone boné"></a></li>
+                <li><a href="#"><img src="/assets/img/sapatoicon (2).png" alt="Ícone sapato"></a></li>
+                <li><a href="#"><img src="/assets/img/cuecaicon.png" alt="Ícone cueca"></a></li>
+                <li><a href="#"><img src="/assets/img/joiasicon.png" alt="Ícone joias"></a></li>
             </ul>
         </nav>
 
@@ -130,70 +129,104 @@
     <!-- Script para buscar produtos -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            function buscarProduto() {
+            window.buscarProduto = function() {
                 const query = document.getElementById('site-search').value.toLowerCase();
                 if (query) {
                     window.location.href = `indexcamisa.html?search=${query}`;
                 }
-            }
-            // Adiciona a função buscarProduto globalmente
-            window.buscarProduto = buscarProduto;
+            };
         });
     </script>
 
-    <!-- Script para exibir modal de login Netlify Identity -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on("init", user => {
-                    if (!user) {
-                        window.netlifyIdentity.on("login", () => {
-                            document.location.href = "/admin/";
-                        });
-                    }
-                });
-            }
-        });
-    </script>
+        // Função para calcular o tamanho baseado nas medidas
+        function calculateSize() {
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            const bust = document.getElementById('bust').value;
+            const waist = document.getElementById('waist').value;
+            const hips = document.getElementById('hips').value;
 
-    <!-- Função para calcular o tamanho baseado nas medidas -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function calculateSize() {
-                const height = document.getElementById('height').value;
-                const weight = document.getElementById('weight').value;
-                const bust = document.getElementById('bust').value;
-                const waist = document.getElementById('waist').value;
-                const hips = document.getElementById('hips').value;
+            let suggestedSize = '';
 
-                let suggestedSize = '';
-
-                if (bust <= 90 && waist <= 70 && hips <= 95) {
-                    suggestedSize = 'P';
-                } else if (bust <= 100 && waist <= 80 && hips <= 105) {
-                    suggestedSize = 'M';
-                } else if (bust <= 110 && waist <= 90 && hips <= 115) {
-                    suggestedSize = 'G';
-                } else {
-                    suggestedSize = 'GG';
-                }
-
-                const resultDiv = document.getElementById('sizeResult');
-                resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
+            if (bust <= 90 && waist <= 70 && hips <= 95) {
+                suggestedSize = 'P';
+            } else if (bust <= 100 && waist <= 80 && hips <= 105) {
+                suggestedSize = 'M';
+            } else if (bust <= 110 && waist <= 90 && hips <= 115) {
+                suggestedSize = 'G';
+            } else {
+                suggestedSize = 'GG';
             }
 
-            // Adiciona a função calculateSize globalmente
-            window.calculateSize = calculateSize;
-        });
+            const resultDiv = document.getElementById('sizeResult');
+            resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
+        }
     </script>
 
-    <!-- Script do Netlify CMS -->
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/netlify-cms.js"></script>
+    <div class="chatbox-container">
+        <div class="chatbox-header">
+            <h3>Chat com Xicos Multimarcas</h3>
+            <button class="close-chat" onclick="toggleChat()">X</button>
+        </div>
+        <div class="chatbox-body" id="chatboxBody">
+            <div class="chat-message bot-message">
+                Olá! Eu sou o Xiquinho! No que posso te ajudar? Resuma sua dúvida em uma palavra!
+            </div>
+        </div>
+        <div class="chatbox-footer">
+            <input type="text" id="chatboxInput" placeholder="Digite sua mensagem..." onkeydown="if(event.key === 'Enter'){ sendMessage(); }">
+            <button onclick="sendMessage()">Enviar</button>
+        </div>
+    </div>
+    <button class="chatbox-toggle" onclick="toggleChat()">Chat</button>
+
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Inicializando o Netlify CMS
-            netlifyCms.init();
-        });
+        let step = 0;  // Variável para controlar o estado da conversa
+
+        function toggleChat() {
+            const chatbox = document.querySelector('.chatbox-container');
+            chatbox.style.display = chatbox.style.display === 'none' || chatbox.style.display === '' ? 'flex' : 'none';
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatboxInput');
+            const messageText = input.value.trim();
+
+            if (messageText) {
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('chat-message', 'user-message');
+                userMessage.textContent = messageText;
+                document.getElementById('chatboxBody').appendChild(userMessage);
+
+                input.value = '';
+                handleBotResponse(messageText);
+            }
+        }
+
+        function handleBotResponse(userMessage) {
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('chat-message', 'bot-message');
+
+            if (step === 0) {
+                botMessage.textContent = 'Oi, como posso ajudar você?';
+                step++;
+            } else if (step === 1) {
+                botMessage.textContent = 'Você está procurando por camisetas, calças, ou bermudas?';
+                step++;
+            } else if (step === 2) {
+                botMessage.textContent = 'Se precisar de algo mais, estou aqui!';
+                step = 0; // Reinicia o ciclo
+            }
+
+            document.getElementById('chatboxBody').appendChild(botMessage);
+            scrollToBottom();
+        }
+
+        function scrollToBottom() {
+            const chatboxBody = document.getElementById('chatboxBody');
+            chatboxBody.scrollTop = chatboxBody.scrollHeight;
+        }
     </script>
 </body>
 </html>
