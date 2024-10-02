@@ -1,13 +1,3 @@
-backend:
-  name: git-gateway
-  branch: main
-
-media_folder: "assets/img-destaques"
-public_folder: "/assets/img-destaques"
-
-media_library:
-  name: uploadcare
-
 collections:
   - name: "produtos"
     label: "Produtos"
@@ -37,11 +27,11 @@ collections:
     fields:
       - { label: "Título do Site", name: "title", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
-      - { label: "Link do WhatsApp", name: "linkWhatsApp", widget: "string" }
-      - { label: "Promoção", name: "promotion", widget: "image" }
+      - { label: "Link do WhatsApp", name: "linkWhatsAppConfig", widget: "string" } # Renomeado para evitar duplicidade
+      - { label: "Promoção", name: "site_promotion", widget: "image" } # Renomeado para evitar duplicidade
       - { label: "Título Encomenda", name: "tituloEncomenda", widget: "string" }
       - { label: "Texto Encomenda", name: "textoEncomenda", widget: "text" }
-      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
+      - { label: "Ícone WhatsApp", name: "iconeWhatsAppConfig", widget: "image" } # Renomeado para evitar duplicidade
       - { label: "Título Entregas", name: "tituloEntregas", widget: "string" }
       - { label: "Regras de Entregas", name: "regrasEntregas", widget: "text" }
       - { label: "Título Pagamentos", name: "tituloPagamentos", widget: "string" }
@@ -53,8 +43,8 @@ collections:
       - { label: "Título Fale Conosco", name: "tituloFaleConosco", widget: "string" }
       - { label: "Link Instagram", name: "linkInstagram", widget: "string" }
       - { label: "Ícone Instagram", name: "iconeInstagram", widget: "image" }
-      - { label: "Link WhatsApp", name: "linkWhatsApp", widget: "string" }
-      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
+      - { label: "Link WhatsApp (Fale Conosco)", name: "linkWhatsAppFaleConosco", widget: "string" } # Renomeado
+      - { label: "Ícone WhatsApp (Fale Conosco)", name: "iconeWhatsAppFaleConosco", widget: "image" } # Renomeado
       - { label: "Link Endereço", name: "linkEndereco", widget: "string" }
       - { label: "Ícone Endereço", name: "iconeEndereco", widget: "image" }
       - { label: "Endereço", name: "endereco", widget: "text" }
