@@ -6,7 +6,7 @@
     <title>{{ title }}</title>
     <link rel="stylesheet" href="/assets/css/xicos.css">
     <!-- Carregando o widget do Netlify Identity -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 
 <body>
@@ -129,54 +129,71 @@
 
     <!-- Script para buscar produtos -->
     <script>
-        function buscarProduto() {
-            const query = document.getElementById('site-search').value.toLowerCase();
-            if (query) {
-                window.location.href = `indexcamisa.html?search=${query}`;
+        document.addEventListener('DOMContentLoaded', function() {
+            function buscarProduto() {
+                const query = document.getElementById('site-search').value.toLowerCase();
+                if (query) {
+                    window.location.href = `indexcamisa.html?search=${query}`;
+                }
             }
-        }
+            // Adiciona a função buscarProduto globalmente
+            window.buscarProduto = buscarProduto;
+        });
     </script>
 
     <!-- Script para exibir modal de login Netlify Identity -->
     <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
+        });
     </script>
 
     <!-- Função para calcular o tamanho baseado nas medidas -->
     <script>
-        function calculateSize() {
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-            const bust = document.getElementById('bust').value;
-            const waist = document.getElementById('waist').value;
-            const hips = document.getElementById('hips').value;
+        document.addEventListener('DOMContentLoaded', function() {
+            function calculateSize() {
+                const height = document.getElementById('height').value;
+                const weight = document.getElementById('weight').value;
+                const bust = document.getElementById('bust').value;
+                const waist = document.getElementById('waist').value;
+                const hips = document.getElementById('hips').value;
 
-            let suggestedSize = '';
+                let suggestedSize = '';
 
-            if (bust <= 90 && waist <= 70 && hips <= 95) {
-                suggestedSize = 'P';
-            } else if (bust <= 100 && waist <= 80 && hips <= 105) {
-                suggestedSize = 'M';
-            } else if (bust <= 110 && waist <= 90 && hips <= 115) {
-                suggestedSize = 'G';
-            } else {
-                suggestedSize = 'GG';
+                if (bust <= 90 && waist <= 70 && hips <= 95) {
+                    suggestedSize = 'P';
+                } else if (bust <= 100 && waist <= 80 && hips <= 105) {
+                    suggestedSize = 'M';
+                } else if (bust <= 110 && waist <= 90 && hips <= 115) {
+                    suggestedSize = 'G';
+                } else {
+                    suggestedSize = 'GG';
+                }
+
+                const resultDiv = document.getElementById('sizeResult');
+                resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
             }
 
-            const resultDiv = document.getElementById('sizeResult');
-            resultDiv.innerHTML = `O tamanho recomendado para você é: <strong>${suggestedSize}</strong>`;
-        }
+            // Adiciona a função calculateSize globalmente
+            window.calculateSize = calculateSize;
+        });
     </script>
 
     <!-- Script do Netlify CMS -->
     <script src="https://cdn.jsdelivr.net/npm/netlify-cms@2.14.1/dist/netlify-cms.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Inicializando o Netlify CMS
+            netlifyCms.init();
+        });
+    </script>
 </body>
 </html>
