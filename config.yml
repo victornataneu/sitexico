@@ -1,9 +1,12 @@
 backend:
   name: git-gateway
-  branch: main # Branch principal
+  branch: main # Defina a branch principal que você está usando
 
-media_folder: "assets/img-destaques" # Pasta onde as imagens serão armazenadas
+media_folder: "assets/img-destaques" # Caminho para armazenar as imagens no repositório
 public_folder: "/assets/img-destaques" # Caminho público para acessar as imagens
+
+media_library:
+  name: uploadcare # Você pode mudar para 'uploadcare' ou deixar como está, se estiver configurando algo diferente
 
 collections:
   - name: "produtos"
@@ -25,7 +28,7 @@ collections:
     fields:
       - { label: "Promoção", name: "promotion", widget: "string" }
       - { label: "Imagem da Promoção", name: "promotion_image", widget: "image" }
-  
+
   - name: "configuracoes"
     label: "Configurações do Site"
     file: "content/configuracoes/config.yml"
