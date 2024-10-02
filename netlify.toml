@@ -1,3 +1,0 @@
-[build]
-publish = "dist"  # ou o diretório que seu build gera
-
