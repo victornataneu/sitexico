@@ -7,31 +7,28 @@
     <!-- Inclui o script do Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <!-- Inclui o script do Netlify CMS -->
-   <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.js"></script>
 </head>
 <body>
     <div id="cms"></div>
     <!-- Scripts devem ser carregados após o body -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Inicializa o Netlify Identity
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
-                    if (user) {
-                        // Se o usuário estiver logado, inicializa o CMS
-                        CMS.init();
-                    } else {
-                        // Redireciona para a página de login
+                    if (!user) {
                         window.netlifyIdentity.on("login", () => {
                             document.location.href = "/admin/";
                         });
+                    } else {
+                        CMS.init(); // Inicializa o CMS apenas se o usuário estiver logado
                     }
                 });
-            }
 
-            // Inicializa o CMS após o carregamento do Netlify Identity
-            window.netlifyIdentity.init();
+                window.netlifyIdentity.init(); // Inicializa o Netlify Identity
+            } else {
+                CMS.init(); // Inicializa o CMS diretamente se o Identity não estiver configurado
+            }
         });
     </script>
 </body>
