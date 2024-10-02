@@ -1,59 +1,38 @@
 backend:
   name: git-gateway
-  branch: main
-  identity_url: "https://catalogoxicomultimarcas.netlify.app/.netlify/identity"
+  branch: main # Branch principal
 
-media_folder: "assets/img"
-public_folder: "/assets/img"
+media_folder: "assets/img-destaques" # Pasta onde as imagens serão armazenadas
+public_folder: "/assets/img-destaques" # Caminho público para acessar as imagens
 
 collections:
-  - name: "featured_products"
-    label: "Produtos em Destaque"
-    folder: "content/featured_products"
+  - name: "produtos"
+    label: "Produtos"
+    folder: "content/produtos"
     create: true
     slug: "{{slug}}"
     fields:
+      - { label: "Título do Produto", name: "title", widget: "string" }
+      - { label: "Descrição", name: "description", widget: "text" }
       - { label: "Imagem do Produto", name: "product_image", widget: "image" }
-      - { label: "Descrição do Produto", name: "product_description", widget: "string" }
+      - { label: "Preço", name: "price", widget: "number" }
 
-  - name: "encomenda"
-    label: "Seção de Encomenda"
-    folder: "content/encomenda"
-    create: false
+  - name: "promocoes"
+    label: "Promoções"
+    folder: "content/promocoes"
+    create: true
+    slug: "{{slug}}"
     fields:
-      - { label: "Título", name: "tituloEncomenda", widget: "string" }
-      - { label: "Texto", name: "textoEncomenda", widget: "text" }
-      - { label: "Link WhatsApp", name: "linkWhatsApp", widget: "string" }
-      - { label: "Ícone WhatsApp", name: "iconeWhatsApp", widget: "image" }
-
-  - name: "regras_entregas"
-    label: "Regras de Entregas"
-    folder: "content/regras_entregas"
-    create: false
+      - { label: "Promoção", name: "promotion", widget: "string" }
+      - { label: "Imagem da Promoção", name: "promotion_image", widget: "image" }
+  
+  - name: "configuracoes"
+    label: "Configurações do Site"
+    file: "content/configuracoes/config.yml"
     fields:
-      - { label: "Título", name: "tituloEntregas", widget: "string" }
-      - { label: "Regras", name: "regrasEntregas", widget: "text" }
-
-  - name: "pagamentos"
-    label: "Formas de Pagamento"
-    folder: "content/pagamentos"
-    create: false
-    fields:
-      - { label: "Título", name: "tituloPagamentos", widget: "string" }
-      - { label: "Ícone Visa", name: "iconeVisa", widget: "image" }
-      - { label: "Ícone Cartão", name: "iconeCartao", widget: "image" }
-      - { label: "Informação Cartão", name: "informacaoPagamento", widget: "text" }
-      - { label: "Ícone Pix", name: "iconePix", widget: "image" }
-      - { label: "Informação Pix", name: "informacaoPix", widget: "text" }
-
-  - name: "contato"
-    label: "Seção de Contato"
-    folder: "content/contato"
-    create: false
-    fields:
-      - { label: "Título", name: "tituloFaleConosco", widget: "string" }
-      - { label: "Link Instagram", name: "linkInstagram", widget: "string" }
-      - { label: "Ícone Instagram", name: "iconeInstagram", widget: "image" }
-      - { label: "Link Endereço", name: "linkEndereco", widget: "string" }
-      - { label: "Ícone Endereço", name: "iconeEndereco", widget: "image" }
-      - { label: "Endereço", name: "endereco", widget: "text" }
+      - { label: "Título do Site", name: "title", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Link do WhatsApp", name: "linkWhatsApp", widget: "string" }
+      - { label: "Regras de Entregas", name: "regrasEntregas", widget: "text" }
+      - { label: "Informações de Pagamento", name: "informacaoPagamento", widget: "text" }
+      - { label: "Informações do Pix", name: "informacaoPix", widget: "text" }
