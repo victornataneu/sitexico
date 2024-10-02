@@ -10,23 +10,24 @@
 <body>
     <div id="cms"></div>
     <script>
-        // Inicializa o Netlify Identity
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-                console.log(user); // Verifica se o usuário está autenticado
-                if (user) {
-                    const token = user.token; // Obtém o token de autenticação
-                    console.log("Token: ", token); // Verifica o token
-                    // Inicializa o Netlify CMS
-                    CMS.init(); // Certifique-se de que isso está correto
-                } else {
-                    // Se não houver usuário, redireciona para o login
-                    window.netlifyIdentity.on("login", () => {
-                        document.location.href = "/admin/";
-                    });
-                }
-            });
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            // Inicializa o Netlify Identity
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    console.log(user);
+                    if (user) {
+                        const token = user.token;
+                        console.log("Token: ", token);
+                        CMS.init(); // Inicializa o Netlify CMS
+                    } else {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
+        });
     </script>
 </body>
+
 </html>
