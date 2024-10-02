@@ -12,6 +12,7 @@
 <body>
     <div id="cms"></div>
     <script>
+        // Inicializa o Netlify Identity
         if (window.netlifyIdentity) {
             window.netlifyIdentity.on("init", user => {
                 if (!user) {
@@ -21,6 +22,9 @@
                 }
             });
         }
+
+        // Inicializa o Netlify CMS
+        netlifyCMS.init();
     </script>
 </body>
 </html>
