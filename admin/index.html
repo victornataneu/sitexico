@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Content Manager</title>
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.js"></script>
+    <!-- Inclui o script do Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <!-- Inclui o script do Netlify CMS -->
+    <script src="https://cdn.jsdelivr.net/npm/netlify-cms@latest/dist/netlify-cms.js"></script>
 </head>
 <body>
     <div id="cms"></div>
@@ -14,20 +16,21 @@
             // Inicializa o Netlify Identity
             if (window.netlifyIdentity) {
                 window.netlifyIdentity.on("init", user => {
-                    console.log(user);
                     if (user) {
-                        const token = user.token;
-                        console.log("Token: ", token);
-                        CMS.init(); // Inicializa o Netlify CMS
+                        // Se o usuário estiver logado, inicializa o CMS
+                        CMS.init();
                     } else {
+                        // Redireciona para a página de login
                         window.netlifyIdentity.on("login", () => {
                             document.location.href = "/admin/";
                         });
                     }
                 });
             }
+
+            // Inicializa o CMS após o carregamento do Netlify Identity
+            window.netlifyIdentity.init();
         });
     </script>
 </body>
-
 </html>
